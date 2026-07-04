@@ -20,3 +20,17 @@ textarea {
 button {
   cursor: pointer;
 }
+
+header,
+footer {
+  padding: 16px 0;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  color: #666;
+}
