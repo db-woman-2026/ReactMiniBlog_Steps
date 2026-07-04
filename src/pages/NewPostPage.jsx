@@ -1,13 +1,26 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function NewPostPage() {
+function NewPostPage({ onCreate }) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const navigate = useNavigate()
+
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    const newPost = onCreate({
+      title,
+      content,
+    })
+
+    navigate(`/posts/${newPost.id}`)
+  }
 
   return (
     <main>
       <h1>New Post</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
           id="title"
@@ -21,6 +34,8 @@ function NewPostPage() {
           value={content}
           onChange={(event) => setContent(event.target.value)}
         />
+
+        <button type="submit">Create Post</button>
       </form>
 
       <section>

@@ -1,4 +1,4 @@
-export const posts = [
+export const initialPosts = [
   {
     id: '1',
     title: 'Getting Started with React',

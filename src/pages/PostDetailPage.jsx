@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { posts } from '../data/posts'
 
-function PostDetailPage() {
+function PostDetailPage({ posts }) {
   const { postId } = useParams()
   const post = posts.find((item) => item.id === postId)
   const [likes, setLikes] = useState(0)

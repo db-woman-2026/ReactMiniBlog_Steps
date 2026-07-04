@@ -1,7 +1,6 @@
 import PostCard from '../components/PostCard'
-import { posts } from '../data/posts'
 
-function PostsPage() {
+function PostsPage({ posts }) {
   return (
     <main>
       <h1>Posts</h1>
