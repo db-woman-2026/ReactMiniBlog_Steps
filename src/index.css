@@ -43,3 +43,9 @@ nav {
   display: flex;
   gap: 12px;
 }
+
+.post-card {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+}

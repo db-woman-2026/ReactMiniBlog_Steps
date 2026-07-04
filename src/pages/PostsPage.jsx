@@ -1,8 +1,15 @@
+import PostCard from '../components/PostCard'
+import { featuredPost } from '../data/posts'
+
 function PostsPage() {
   return (
     <main>
       <h1>Posts</h1>
-      <p>Posts will be displayed here in the next steps.</p>
+      <PostCard
+        title={featuredPost.title}
+        excerpt={featuredPost.excerpt}
+        author={featuredPost.author}
+      />
     </main>
   )
 }
