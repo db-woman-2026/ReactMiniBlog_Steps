@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import AboutPage from './pages/AboutPage'
 import HomePage from './pages/HomePage'
+import PostDetailPage from './pages/PostDetailPage'
 import PostsPage from './pages/PostsPage'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/posts" element={<PostsPage />} />
+        <Route path="/posts/:postId" element={<PostDetailPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
