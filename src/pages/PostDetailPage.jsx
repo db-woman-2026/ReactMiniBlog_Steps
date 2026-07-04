@@ -34,6 +34,7 @@ function PostDetailPage({ posts, onDelete }) {
       >
         Delete
       </button>
+      <Link to={`/posts/${post.id}/edit`}>Edit</Link>
       <Link to="/posts">Back to posts</Link>
     </main>
   )
