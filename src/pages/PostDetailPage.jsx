@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
-function PostDetailPage({ posts }) {
+function PostDetailPage({ posts, onDelete }) {
   const { postId } = useParams()
+  const navigate = useNavigate()
   const post = posts.find((item) => item.id === postId)
   const [likes, setLikes] = useState(0)
 
@@ -23,6 +24,15 @@ function PostDetailPage({ posts }) {
       <p>{post.content}</p>
       <button type="button" onClick={() => setLikes(likes + 1)}>
         Like {likes}
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          onDelete(post.id)
+          navigate('/posts')
+        }}
+      >
+        Delete
       </button>
       <Link to="/posts">Back to posts</Link>
     </main>

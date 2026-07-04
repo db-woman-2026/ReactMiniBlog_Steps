@@ -25,6 +25,10 @@ function App() {
     return newPost
   }
 
+  function deletePost(id) {
+    setPosts(posts.filter((post) => post.id !== id))
+  }
+
   return (
     <BrowserRouter>
       <Header />
@@ -38,7 +42,7 @@ function App() {
         />
         <Route
           path="/posts/:postId"
-          element={<PostDetailPage posts={posts} />}
+          element={<PostDetailPage posts={posts} onDelete={deletePost} />}
         />
       </Routes>
       <Footer />
