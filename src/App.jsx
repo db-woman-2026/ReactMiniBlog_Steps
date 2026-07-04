@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -10,8 +10,28 @@ import NewPostPage from './pages/NewPostPage'
 import PostDetailPage from './pages/PostDetailPage'
 import PostsPage from './pages/PostsPage'
 
+const STORAGE_KEY = 'react-mini-blog-posts'
+
+function loadInitialPosts() {
+  const savedPosts = localStorage.getItem(STORAGE_KEY)
+
+  if (!savedPosts) {
+    return initialPosts
+  }
+
+  try {
+    return JSON.parse(savedPosts)
+  } catch {
+    return initialPosts
+  }
+}
+
 function App() {
-  const [posts, setPosts] = useState(initialPosts)
+  const [posts, setPosts] = useState(loadInitialPosts)
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(posts))
+  }, [posts])
 
   function createPost(postInput) {
     const newPost = {
