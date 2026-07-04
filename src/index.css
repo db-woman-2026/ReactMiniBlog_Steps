@@ -27,10 +27,19 @@ footer {
 }
 
 header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
   border-bottom: 1px solid #ddd;
 }
 
 footer {
   border-top: 1px solid #ddd;
   color: #666;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
 }
