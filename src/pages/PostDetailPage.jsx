@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { posts } from '../data/posts'
 
 function PostDetailPage() {
   const { postId } = useParams()
   const post = posts.find((item) => item.id === postId)
+  const [likes, setLikes] = useState(0)
 
   if (!post) {
     return (
@@ -20,6 +22,9 @@ function PostDetailPage() {
       <h1>{post.title}</h1>
       <p>Written by {post.author}</p>
       <p>{post.content}</p>
+      <button type="button" onClick={() => setLikes(likes + 1)}>
+        Like {likes}
+      </button>
       <Link to="/posts">Back to posts</Link>
     </main>
   )
