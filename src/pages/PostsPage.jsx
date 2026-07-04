@@ -1,15 +1,18 @@
 import PostCard from '../components/PostCard'
-import { featuredPost } from '../data/posts'
+import { posts } from '../data/posts'
 
 function PostsPage() {
   return (
     <main>
       <h1>Posts</h1>
-      <PostCard
-        title={featuredPost.title}
-        excerpt={featuredPost.excerpt}
-        author={featuredPost.author}
-      />
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          excerpt={post.excerpt}
+          author={post.author}
+        />
+      ))}
     </main>
   )
 }
