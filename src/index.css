@@ -63,3 +63,7 @@ nav {
   padding: 16px;
   border: 1px solid #ddd;
 }
+
+.error-message {
+  color: #b00020;
+}
