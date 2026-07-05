@@ -1,6 +1,6 @@
 # Lecture Index
 
-이 폴더는 `step-7` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
+이 폴더는 `step-8` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
 각 문서는 이전 단계 실습 결과에서 현재 단계로 넘어오며 직접 입력할 기능 코드를 작업 단위로 나누고, 설명 바로 아래에 프로젝트 내부 파일 링크와 실제 diff를 제공합니다.
 
 강의 실습은 이 `docs/lecture/` 문서를 기준으로 진행합니다.
@@ -16,6 +16,7 @@
 | `step-5` | [lecture/step-5.md](./step-5.md) | 게시글 배열을 `map`으로 반복 렌더링합니다. |
 | `step-6` | [lecture/step-6.md](./step-6.md) | `/posts/:postId` 동적 라우트로 상세 페이지를 만듭니다. |
 | `step-7` | [lecture/step-7.md](./step-7.md) | 이벤트와 `useState`로 좋아요 버튼 상태를 다룹니다. |
+| `step-8` | [lecture/step-8.md](./step-8.md) | controlled input으로 새 글 작성 form의 입력값을 관리합니다. |
 
 ## 실습 방식
 
