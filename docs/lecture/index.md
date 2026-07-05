@@ -1,6 +1,6 @@
 # Lecture Index
 
-이 폴더는 `step-13` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
+이 폴더는 `step-14` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
 각 문서는 이전 단계 실습 결과에서 현재 단계로 넘어오며 직접 입력할 기능 코드를 작업 단위로 나누고, 설명 바로 아래에 프로젝트 내부 파일 링크와 실제 diff를 제공합니다.
 
 강의 실습은 이 `docs/lecture/` 문서를 기준으로 진행합니다.
@@ -22,6 +22,7 @@
 | `step-11` | [lecture/step-11.md](./step-11.md) | 상세 화면에서 게시글을 삭제하고 목록으로 이동합니다. |
 | `step-12` | [lecture/step-12.md](./step-12.md) | 기존 게시글을 수정하는 edit 화면을 추가합니다. |
 | `step-13` | [lecture/step-13.md](./step-13.md) | keyword state로 게시글 목록을 검색합니다. |
+| `step-14` | [lecture/step-14.md](./step-14.md) | `localStorage`와 `useEffect`로 새로고침 후에도 데이터를 유지합니다. |
 
 ## 실습 방식
 
