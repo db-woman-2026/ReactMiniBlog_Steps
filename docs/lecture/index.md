@@ -1,6 +1,6 @@
 # Lecture Index
 
-이 폴더는 `step-10` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
+이 폴더는 `step-11` 브랜치에서 사용할 수 있는 실습형 강의 자료입니다.
 각 문서는 이전 단계 실습 결과에서 현재 단계로 넘어오며 직접 입력할 기능 코드를 작업 단위로 나누고, 설명 바로 아래에 프로젝트 내부 파일 링크와 실제 diff를 제공합니다.
 
 강의 실습은 이 `docs/lecture/` 문서를 기준으로 진행합니다.
@@ -19,6 +19,7 @@
 | `step-8` | [lecture/step-8.md](./step-8.md) | controlled input으로 새 글 작성 form의 입력값을 관리합니다. |
 | `step-9` | [lecture/step-9.md](./step-9.md) | form submit으로 state 배열에 새 게시글을 추가합니다. |
 | `step-10` | [lecture/step-10.md](./step-10.md) | 빈 입력 검증과 조건부 오류 메시지를 추가합니다. |
+| `step-11` | [lecture/step-11.md](./step-11.md) | 상세 화면에서 게시글을 삭제하고 목록으로 이동합니다. |
 
 ## 실습 방식
 
