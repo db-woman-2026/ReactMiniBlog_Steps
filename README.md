@@ -28,9 +28,12 @@ npm run lint
 
 ## Documentation
 
-The first documentation pass only contains short overview documents:
+Documentation is split into short overview documents and hands-on lecture documents.
+Each `step-N` branch contains the documents available up to that step.
 
 - `docs/overview/index.md`
 - `docs/overview/step-N.md`
+- `docs/lecture/README.md`
+- `docs/lecture/step-N.md`
 
-Detailed hands-on lecture documents can be added later.
+The lecture folder uses `README.md` as its entry point, so students can open the folder and follow the step list from there.
