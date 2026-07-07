@@ -15,6 +15,12 @@ git switch step-1
 git switch step-2
 ```
 
+## Branch Hierarchy
+
+These branches are not independent example copies. They are a parent-child learning chain that starts at `main` and continues as `main -> step-1 -> step-2 -> ... -> step-N`.
+
+Future work must preserve that ancestry. When a change belongs to a specific lesson step, commit it at the earliest affected step first, then merge forward one step at a time. Do not make the same change as unrelated commits on multiple `step-N` branches, because that breaks the curriculum history students and instructors compare against.
+
 The project intentionally avoids backend, database, authentication, TypeScript, Tailwind CSS, and production-level architecture. Those topics belong to later courses.
 
 ## Scripts
