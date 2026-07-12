@@ -34,9 +34,10 @@ npm run lint
 
 ## Documentation
 
-The first documentation pass only contains short overview documents:
+Read the documents in this order:
 
-- `docs/overview/index.md`
-- `docs/overview/step-N.md`
+1. `docs/basic/README.md` and `docs/basic/chapter-N.md`
+2. `docs/overview/index.md` and `docs/overview/step-N.md`
+3. `docs/lecture/README.md` and `docs/lecture/step-N.md`
 
-Detailed hands-on lecture documents can be added later.
+The `main` branch contains the complete React basics course. Hands-on overview and lecture documents are added cumulatively to their matching `step-N` branches. After the basics, switch to `step-1` and follow the practice branches in order.
