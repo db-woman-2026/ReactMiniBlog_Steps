@@ -34,12 +34,12 @@ npm run lint
 
 ## Documentation
 
-Documentation is split into short overview documents and hands-on lecture documents.
-Each `step-N` branch contains the documents available up to that step.
+Read the documents in this order:
 
-- `docs/overview/index.md`
-- `docs/overview/step-N.md`
-- `docs/lecture/README.md`
-- `docs/lecture/step-N.md`
+1. `docs/basic/README.md` and `docs/basic/chapter-N.md`
+2. `docs/overview/index.md` and `docs/overview/step-N.md`
+3. `docs/lecture/README.md` and `docs/lecture/step-N.md`
 
-The lecture folder uses `README.md` as its entry point, so students can open the folder and follow the step list from there.
+The `main` branch contains the complete React basics course. Hands-on overview and lecture documents are added cumulatively to their matching `step-N` branches. After the basics, switch to `step-1` and follow the practice branches in order.
+
+Each documentation folder uses its index or `README.md` as an entry point, so students can open the folder and follow the available chapter or step list from there.
