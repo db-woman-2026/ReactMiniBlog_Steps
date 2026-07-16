@@ -22,7 +22,10 @@ function PostDetailPage() {
       <h1>{post.title}</h1>
       <p>Written by {post.author}</p>
       <p>{post.content}</p>
-      <button type="button" onClick={() => setLikes(likes + 1)}>
+      <button
+        type="button"
+        onClick={() => setLikes((currentLikes) => currentLikes + 1)}
+      >
         Like {likes}
       </button>
       <Link to="/posts">Back to posts</Link>
