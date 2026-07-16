@@ -157,7 +157,7 @@ async function loadPosts() {
 }
 ~~~
 
-- `async`: 함수 안에서 `await`를 사용할 수 있게 합니다.
+- `async`: 이 함수 안에서 `await`를 사용한다는 선언입니다.
 - `await`: 비동기 작업의 결과를 기다립니다.
 - `response.json()`: JSON 응답을 JavaScript 값으로 읽습니다.
 
