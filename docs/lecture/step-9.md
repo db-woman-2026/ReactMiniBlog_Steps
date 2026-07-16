@@ -1,6 +1,6 @@
 # Step 9. State 배열에 게시글 작성
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - 게시글 배열을 App의 state로 관리합니다.
 - 작성 form submit으로 새 게시글을 추가합니다.
@@ -10,14 +10,14 @@
 
 게시글을 작성하려면 목록 데이터가 바뀔 수 있어야 합니다. 고정 배열을 `App.jsx`의 state로 옮기고, 목록/상세/작성 화면에 필요한 값을 props로 전달합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/App.jsx](../../src/App.jsx)
 - 수정: [src/data/posts.js](../../src/data/posts.js)
 - 수정: [src/pages/PostsPage.jsx](../../src/pages/PostsPage.jsx)
 - 수정: [src/pages/PostDetailPage.jsx](../../src/pages/PostDetailPage.jsx)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -114,7 +114,7 @@ index aef3c92..faa7f21 100644
        <h1>Posts</h1>
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - 데이터를 바꿀 수 있게 하려면 state로 관리해야 합니다.
 - `createPost`는 새 게시글 객체를 만들고 배열 앞에 추가합니다.
@@ -124,11 +124,11 @@ index aef3c92..faa7f21 100644
 
 New Post 화면에서 form을 제출하면 부모가 받은 `onCreate` 함수를 호출합니다. 새 게시글이 만들어지면 그 상세 화면으로 이동합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/pages/NewPostPage.jsx](../../src/pages/NewPostPage.jsx)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -177,7 +177,7 @@ index aa144b8..9b53d8a 100644
        <section>
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - `event.preventDefault()`는 form 제출로 페이지가 새로고침되는 것을 막습니다.
 - `useNavigate`는 코드로 다른 주소로 이동할 때 사용합니다.

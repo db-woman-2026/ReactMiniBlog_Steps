@@ -1,6 +1,6 @@
 # Step 3. React Router 기초
 
-## 이 단계의 목표
+## 배울 내용
 
 React Router를 추가해 URL과 화면을 연결합니다.
 
