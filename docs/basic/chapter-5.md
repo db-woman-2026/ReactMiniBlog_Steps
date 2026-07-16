@@ -140,7 +140,7 @@ const imageWidth = 80
 <img src={imageUrl} width={imageWidth} alt="프로필" />
 ~~~
 
-숫자를 따옴표로 감싸면 문자열이 됩니다. React가 처리해 주는 경우도 있지만 값의 종류를 구분하는 습관이 중요합니다.
+숫자를 따옴표로 감싸면 문자열이 됩니다. 숫자 props는 `{imageWidth}`처럼 숫자 표현식으로 전달합니다.
 
 ## 7. JSX 안에 컴포넌트 넣기
 
