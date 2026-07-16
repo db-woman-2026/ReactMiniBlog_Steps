@@ -75,7 +75,7 @@ The final branch is still a frontend-only learning project, but it contains a co
 
 ### Data Flow
 
-When no saved data exists, the app fetches `/posts.json`. If that request fails, it falls back to `src/data/posts.js`. After loading, every post change is saved under the `react-mini-blog-posts` key in `localStorage`.
+When no saved data exists, the app fetches `/posts.json`. If the request fails or the response is not a valid post array, it falls back to `src/data/posts.js`. After loading, every post change is saved under the `react-mini-blog-posts` key in `localStorage`.
 
 This is intentionally a mock frontend data flow. `step-15` uses it to make the transition to the server and database flow in `NextJsBlog_Steps` easier to understand.
 
