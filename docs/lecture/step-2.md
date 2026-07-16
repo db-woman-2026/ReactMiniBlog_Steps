@@ -1,6 +1,6 @@
 # Step 2. 컴포넌트 분리
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - 화면을 Header, Footer, HomePage 컴포넌트로 나눕니다.
 - 파일을 나누고 import/export로 연결합니다.
@@ -10,7 +10,7 @@
 
 `App.jsx` 안에 있던 내용을 Header, HomePage, Footer로 나눕니다. 이 단계의 목표는 기능을 늘리는 것이 아니라 파일을 나누고 다시 연결하는 흐름을 익히는 것입니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/App.jsx](../../src/App.jsx)
 - 새 파일: [src/components/Header.jsx](../../src/components/Header.jsx)
@@ -18,7 +18,7 @@
 - 새 파일: [src/pages/HomePage.jsx](../../src/pages/HomePage.jsx)
 - 수정: [src/index.css](../../src/index.css)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -125,7 +125,7 @@ index 0000000..5f3251c
 +export default HomePage
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - `App.jsx`는 전체 배치를 조립합니다.
 - `Header`, `Footer`, `HomePage`는 각각 독립된 화면 조각입니다.
