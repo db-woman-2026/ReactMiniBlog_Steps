@@ -12,6 +12,22 @@ import PostsPage from './pages/PostsPage'
 
 const STORAGE_KEY = 'react-mini-blog-posts'
 
+function isPostArray(value) {
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (post) =>
+        post !== null &&
+        typeof post === 'object' &&
+        typeof post.id === 'string' &&
+        typeof post.title === 'string' &&
+        typeof post.excerpt === 'string' &&
+        typeof post.content === 'string' &&
+        typeof post.author === 'string',
+    )
+  )
+}
+
 function loadSavedPosts() {
   const savedPosts = localStorage.getItem(STORAGE_KEY)
 
@@ -21,7 +37,7 @@ function loadSavedPosts() {
 
   try {
     const parsedPosts = JSON.parse(savedPosts)
-    return Array.isArray(parsedPosts) ? parsedPosts : null
+    return isPostArray(parsedPosts) ? parsedPosts : null
   } catch {
     return null
   }
@@ -49,8 +65,8 @@ function App() {
 
         const starterPosts = await response.json()
 
-        if (!Array.isArray(starterPosts)) {
-          throw new Error('Starter posts must be an array.')
+        if (!isPostArray(starterPosts)) {
+          throw new Error('Starter posts must contain valid posts.')
         }
 
         if (!ignore) {

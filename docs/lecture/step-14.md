@@ -26,7 +26,7 @@ state는 새로고침하면 사라집니다. 브라우저의 `localStorage`에 p
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index c856a63..8fece1a 100644
+index c856a63..1da5f65 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
 @@ -1,4 +1,4 @@
@@ -35,11 +35,27 @@ index c856a63..8fece1a 100644
  import { BrowserRouter, Route, Routes } from 'react-router-dom'
  import Footer from './components/Footer'
  import Header from './components/Header'
-@@ -10,8 +10,29 @@ import NewPostPage from './pages/NewPostPage'
+@@ -10,8 +10,45 @@ import NewPostPage from './pages/NewPostPage'
  import PostDetailPage from './pages/PostDetailPage'
  import PostsPage from './pages/PostsPage'
  
 +const STORAGE_KEY = 'react-mini-blog-posts'
++
++function isPostArray(value) {
++  return (
++    Array.isArray(value) &&
++    value.every(
++      (post) =>
++        post !== null &&
++        typeof post === 'object' &&
++        typeof post.id === 'string' &&
++        typeof post.title === 'string' &&
++        typeof post.excerpt === 'string' &&
++        typeof post.content === 'string' &&
++        typeof post.author === 'string',
++    )
++  )
++}
 +
 +function loadInitialPosts() {
 +  const savedPosts = localStorage.getItem(STORAGE_KEY)
@@ -50,7 +66,7 @@ index c856a63..8fece1a 100644
 +
 +  try {
 +    const parsedPosts = JSON.parse(savedPosts)
-+    return Array.isArray(parsedPosts) ? parsedPosts : initialPosts
++    return isPostArray(parsedPosts) ? parsedPosts : initialPosts
 +  } catch {
 +    return initialPosts
 +  }
@@ -72,7 +88,8 @@ index c856a63..8fece1a 100644
 
 - `localStorage.getItem`은 저장된 문자열을 읽습니다.
 - `JSON.parse`와 `JSON.stringify`로 배열과 문자열을 변환합니다.
-- JSON 문법이 맞아도 배열이 아니면 게시글 목록으로 사용할 수 없으므로 `Array.isArray()`로 확인합니다.
+- `isPostArray`는 배열 여부와 각 게시글의 `id`, `title`, `excerpt`, `content`, `author` 형식을 함께 검사합니다.
+- `every`는 모든 게시글이 검사 조건을 통과할 때만 `true`를 반환합니다.
 - `useEffect`는 posts state가 바뀐 뒤 저장 작업을 실행합니다.
 
 ## 실행 확인
@@ -83,8 +100,8 @@ index c856a63..8fece1a 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+글을 작성하거나 수정한 뒤 새로고침해도 결과가 남는지 확인합니다. 삭제한 글도 새로고침 뒤 다시 생기지 않아야 합니다.
 
 ## 독립 확인
 
-개발자 도구에서 localStorage 값을 `{"title":"not an array"}`로 바꾸고 새로고침합니다. 초기 데이터로 회복되는지 확인하고 결과를 한 문장으로 기록합니다. 실험값은 다음 단계 전에 삭제합니다.
+개발자 도구에서 localStorage 값을 `{"title":"not an array"}`와 `[{"id":"1"}]`로 각각 바꾸고 새로고침합니다. 두 경우 모두 초기 데이터로 회복되는지 확인하고 결과를 한 문장으로 기록합니다. 실험값은 다음 단계 전에 삭제합니다.
