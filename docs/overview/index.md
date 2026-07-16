@@ -1,5 +1,7 @@
 # 단계별 개요
 
+Windows 11에서는 [Windows 11 환경 준비](../windows-11.md)를 마친 뒤 시작합니다.
+
 React 미니 블로그의 단계별 개요입니다. 입력 순서와 diff는 `docs/lecture/`에서 확인합니다.
 
 ## 전체 흐름
