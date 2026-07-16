@@ -21,7 +21,7 @@ function App() {
       author: 'Student',
     }
 
-    setPosts([newPost, ...posts])
+    setPosts((currentPosts) => [newPost, ...currentPosts])
     return newPost
   }
 

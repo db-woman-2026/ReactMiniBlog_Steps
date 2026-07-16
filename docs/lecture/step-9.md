@@ -6,9 +6,17 @@
 - 작성 form submit으로 새 게시글을 추가합니다.
 - 작성 후 새 게시글 상세 화면으로 이동합니다.
 
+## 시작 전 확인
+
+권장 시간은 60분입니다. 이 문서의 diff는 `step-8` 완료 코드에 적용합니다. `step-9` branch는 아래 변경이 이미 반영된 완성본입니다.
+
+수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+
 ## 작업 1. 게시글 배열을 App state로 올리기
 
 게시글을 작성하려면 목록 데이터가 바뀔 수 있어야 합니다. 고정 배열을 `App.jsx`의 state로 옮기고, 목록/상세/작성 화면에 필요한 값을 props로 전달합니다.
+
+새 배열은 함수형 updater로 만듭니다. React가 전달한 최신 배열을 사용하면 연속된 추가가 오래된 `posts` 값을 참조하지 않습니다.
 
 ### 수정할 파일
 
@@ -23,7 +31,7 @@
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index 42c542d..ecf4084 100644
+index 42c542d..6580aec 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
 @@ -1,6 +1,8 @@
@@ -50,7 +58,7 @@ index 42c542d..ecf4084 100644
 +      author: 'Student',
 +    }
 +
-+    setPosts([newPost, ...posts])
++    setPosts((currentPosts) => [newPost, ...currentPosts])
 +    return newPost
 +  }
 +
@@ -192,3 +200,7 @@ npm run dev
 ~~~
 
 브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+
+## 독립 확인
+
+새 글을 두 개 연속 추가하고 기존 글이 사라지지 않는지 확인합니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.
