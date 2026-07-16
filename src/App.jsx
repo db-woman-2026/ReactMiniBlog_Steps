@@ -20,7 +20,8 @@ function loadSavedPosts() {
   }
 
   try {
-    return JSON.parse(savedPosts)
+    const parsedPosts = JSON.parse(savedPosts)
+    return Array.isArray(parsedPosts) ? parsedPosts : null
   } catch {
     return null
   }
@@ -47,6 +48,10 @@ function App() {
         }
 
         const starterPosts = await response.json()
+
+        if (!Array.isArray(starterPosts)) {
+          throw new Error('Starter posts must be an array.')
+        }
 
         if (!ignore) {
           setPosts(starterPosts)
@@ -84,17 +89,19 @@ function App() {
       author: 'Student',
     }
 
-    setPosts([newPost, ...posts])
+    setPosts((currentPosts) => [newPost, ...currentPosts])
     return newPost
   }
 
   function deletePost(id) {
-    setPosts(posts.filter((post) => post.id !== id))
+    setPosts((currentPosts) =>
+      currentPosts.filter((post) => post.id !== id),
+    )
   }
 
   function updatePost(id, postInput) {
-    setPosts(
-      posts.map((post) =>
+    setPosts((currentPosts) =>
+      currentPosts.map((post) =>
         post.id === id
           ? {
               ...post,

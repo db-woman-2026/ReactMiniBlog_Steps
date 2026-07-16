@@ -6,6 +6,12 @@
 - 저장된 localStorage 데이터가 없을 때만 mock 데이터를 불러옵니다.
 - 이 흐름이 Next.js API와 DB로 어떻게 이어지는지 확인합니다.
 
+## 시작 전 확인
+
+권장 시간은 70분입니다. 이 문서의 diff는 `step-14` 완료 코드에 적용합니다. `step-15` branch는 아래 변경이 이미 반영된 완성본입니다.
+
+수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+
 ## 작업 1. mock 게시글 JSON 추가하기
 
 서버 없이도 외부 데이터처럼 불러오는 연습을 하기 위해 `public/posts.json` 파일을 만듭니다. 이 파일은 브라우저에서 `/posts.json` 주소로 요청할 수 있습니다.
@@ -69,10 +75,10 @@ index 0000000..8004dd2
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index f4f3be3..edfd251 100644
+index 8fece1a..0c602dd 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
-@@ -12,26 +12,68 @@ import PostsPage from './pages/PostsPage'
+@@ -12,27 +12,73 @@ import PostsPage from './pages/PostsPage'
  
  const STORAGE_KEY = 'react-mini-blog-posts'
  
@@ -86,7 +92,9 @@ index f4f3be3..edfd251 100644
    }
  
    try {
-     return JSON.parse(savedPosts)
+     const parsedPosts = JSON.parse(savedPosts)
+-    return Array.isArray(parsedPosts) ? parsedPosts : initialPosts
++    return Array.isArray(parsedPosts) ? parsedPosts : null
    } catch {
 -    return initialPosts
 +    return null
@@ -115,6 +123,10 @@ index f4f3be3..edfd251 100644
 +        }
 +
 +        const starterPosts = await response.json()
++
++        if (!Array.isArray(starterPosts)) {
++          throw new Error('Starter posts must be an array.')
++        }
 +
 +        if (!ignore) {
 +          setPosts(starterPosts)
@@ -146,7 +158,7 @@ index f4f3be3..edfd251 100644
  
    function createPost(postInput) {
      const newPost = {
-@@ -68,23 +110,30 @@ function App() {
+@@ -71,23 +117,30 @@ function App() {
    return (
      <BrowserRouter>
        <Header />
@@ -199,6 +211,7 @@ index f4f3be3..edfd251 100644
 ### 설명과 확인
 
 - `fetch`는 주소로 데이터를 요청할 때 사용하는 기본 함수입니다.
+- 저장 데이터와 fetch 응답은 JSON 문법뿐 아니라 배열 형식도 확인합니다.
 - 이 프로젝트에서는 정적 JSON을 가져오지만, Next.js에서는 API Route와 DB 요청으로 확장됩니다.
 - 로딩 중에는 목록 라우트 대신 로딩 화면을 보여줍니다.
 
@@ -211,3 +224,7 @@ npm run dev
 ~~~
 
 브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+
+## 독립 확인
+
+localStorage를 비운 뒤 mock fetch 성공을 확인합니다. `posts.json`을 잠시 `{}`로 바꿔 fallback 목록도 확인하고, 결과를 기록한 뒤 파일을 복구합니다.

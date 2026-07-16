@@ -6,6 +6,12 @@
 - `filter`로 삭제된 글을 제외한 새 배열을 만듭니다.
 - 삭제 후 게시글 목록으로 이동합니다.
 
+## 시작 전 확인
+
+권장 시간은 45분입니다. 이 문서의 diff는 `step-10` 완료 코드에 적용합니다. `step-11` branch는 아래 변경이 이미 반영된 완성본입니다.
+
+수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+
 ## 작업 1. 상세 화면에서 게시글 삭제하기
 
 삭제는 배열에서 특정 id의 게시글을 제외한 새 배열을 만드는 일로 이해할 수 있습니다. 삭제 후에는 목록 화면으로 이동합니다.
@@ -21,21 +27,23 @@
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index ecf4084..bbbe0d5 100644
+index 6580aec..d39fcc4 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
-@@ -25,6 +25,10 @@ function App() {
+@@ -25,6 +25,12 @@ function App() {
      return newPost
    }
  
 +  function deletePost(id) {
-+    setPosts(posts.filter((post) => post.id !== id))
++    setPosts((currentPosts) =>
++      currentPosts.filter((post) => post.id !== id),
++    )
 +  }
 +
    return (
      <BrowserRouter>
        <Header />
-@@ -38,7 +42,7 @@ function App() {
+@@ -38,7 +44,7 @@ function App() {
          />
          <Route
            path="/posts/:postId"
@@ -81,6 +89,7 @@ index 0f0dfeb..1b954a2 100644
 ### 설명과 확인
 
 - `filter`는 조건을 통과한 항목만 남긴 새 배열을 만듭니다.
+- 함수형 updater의 `currentPosts`는 삭제 시점의 최신 배열입니다.
 - 부모의 `deletePost` 함수를 상세 페이지에 props로 전달합니다.
 - 삭제 후 `navigate("/posts")`로 목록 화면으로 이동합니다.
 
@@ -93,3 +102,7 @@ npm run dev
 ~~~
 
 브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+
+## 독립 확인
+
+글을 삭제한 뒤 목록과 상세 주소의 결과를 확인합니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.

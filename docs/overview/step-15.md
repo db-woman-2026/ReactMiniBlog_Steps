@@ -14,7 +14,18 @@
 
 - `fetch`는 외부 데이터를 가져올 때 사용하는 기본 API입니다.
 - 이 프로젝트에서는 서버 대신 정적 JSON 파일을 사용합니다.
+- 저장 데이터와 fetch 응답이 배열이 아니면 fallback 데이터를 사용합니다.
 - Next.js에서는 같은 데이터 흐름이 API Route와 MongoDB로 확장됩니다.
+
+```js
+const starterPosts = await response.json()
+
+if (!Array.isArray(starterPosts)) {
+  throw new Error('Starter posts must be an array.')
+}
+```
+
+HTTP 성공과 JSON 파싱 성공만으로 게시글 목록 형식을 보장할 수 없습니다. 화면에서 사용하는 배열인지 확인한 뒤 state에 넣습니다.
 
 ## 확인 방법
 
