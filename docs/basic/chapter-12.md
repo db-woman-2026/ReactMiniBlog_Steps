@@ -128,12 +128,15 @@ function loadPosts() {
   }
 
   try {
-    return JSON.parse(savedText)
+    const parsedPosts = JSON.parse(savedText)
+    return Array.isArray(parsedPosts) ? parsedPosts : []
   } catch {
     return []
   }
 }
 ~~~
+
+JSON 문법이 맞아도 결과가 객체 하나라면 게시글 목록으로 사용할 수 없습니다. 실습의 `isPostArray`는 배열 안의 각 게시글 필드도 문자열인지 검사합니다.
 
 ## 6. state가 바뀔 때 저장하기
 
@@ -172,7 +175,13 @@ async function loadPosts() {
       throw new Error('게시글을 불러오지 못했습니다.')
     }
 
-    return await response.json()
+    const posts = await response.json()
+
+    if (!Array.isArray(posts)) {
+      throw new Error('게시글 응답이 배열이 아닙니다.')
+    }
+
+    return posts
   } catch (error) {
     console.error(error)
     return []
@@ -188,15 +197,22 @@ function PostsPage() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    async function loadPosts() {
-      const response = await fetch('/posts.json')
-      const data = await response.json()
+    let ignore = false
 
-      setPosts(data)
-      setIsLoading(false)
+    async function load() {
+      const data = await loadPosts()
+
+      if (!ignore) {
+        setPosts(data)
+        setIsLoading(false)
+      }
     }
 
-    loadPosts()
+    load()
+
+    return () => {
+      ignore = true
+    }
   }, [])
 
   if (isLoading) {
