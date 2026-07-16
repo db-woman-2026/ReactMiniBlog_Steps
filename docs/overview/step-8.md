@@ -1,6 +1,6 @@
 # Step 8. Controlled Input
 
-## 이 단계의 목표
+## 배울 내용
 
 새 글 작성 form을 만들고, 입력값을 React state로 관리합니다.
 
