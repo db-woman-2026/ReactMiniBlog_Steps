@@ -6,7 +6,7 @@
 - `const`와 `let`으로 값에 이름을 붙입니다.
 - 연산자와 템플릿 문자열로 새 값을 만듭니다.
 
-React 코드는 JavaScript입니다. JSX를 배우기 전에 화면에 넣을 데이터를 JavaScript로 표현하는 방법부터 살펴봅니다.
+React 코드는 JavaScript입니다. JSX를 배우기 전에 화면에 넣을 데이터를 JavaScript로 표현하는 방법부터 확인합니다.
 
 ## 1. 값의 종류
 
