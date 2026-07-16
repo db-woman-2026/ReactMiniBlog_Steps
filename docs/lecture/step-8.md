@@ -1,6 +1,6 @@
 # Step 8. Controlled Input
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - 새 글 작성 화면을 추가합니다.
 - 제목과 내용을 controlled input으로 관리합니다.
@@ -10,12 +10,12 @@
 
 새 글 작성 화면으로 이동할 수 있도록 `/posts/new` 라우트와 Header 메뉴를 추가합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/App.jsx](../../src/App.jsx)
 - 수정: [src/components/Header.jsx](../../src/components/Header.jsx)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -54,7 +54,7 @@ index 9da27a5..ece04d9 100644
    )
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - 정적인 주소인 `/posts/new`를 상세 주소보다 먼저 등록합니다.
 - Header에 New Post 링크를 추가해 form 화면으로 이동할 수 있게 합니다.
@@ -63,12 +63,12 @@ index 9da27a5..ece04d9 100644
 
 제목과 내용 입력값을 React state로 관리합니다. 아직 저장은 하지 않고, 입력 중인 값을 preview에 바로 보여줍니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 새 파일: [src/pages/NewPostPage.jsx](../../src/pages/NewPostPage.jsx)
 - 수정: [src/index.css](../../src/index.css)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -140,7 +140,7 @@ index 0000000..aa144b8
 +export default NewPostPage
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - controlled input은 `value`와 `onChange`가 state와 연결된 입력창입니다.
 - 입력값이 바뀔 때마다 state가 바뀌고 preview도 함께 바뀝니다.

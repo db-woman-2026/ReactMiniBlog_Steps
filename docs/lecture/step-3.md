@@ -1,6 +1,6 @@
 # Step 3. React Router 기초
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - React Router를 설치하고 URL과 화면을 연결합니다.
 - `/`, `/about`, `/posts` 주소를 만듭니다.
@@ -8,19 +8,19 @@
 
 ## 작업 1. React Router 설치
 
-Vite는 React 앱을 실행해주는 도구이고, 라우팅은 직접 추가해야 합니다. 이번 단계에서는 React Router를 설치해 URL과 화면을 연결할 준비를 합니다.
+Vite는 React 앱을 실행해주는 도구이고, 라우팅은 직접 추가해야 합니다. React Router를 설치해 URL과 화면을 연결할 준비를 합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 명령으로 처리: `react-router-dom 설치`
 
-### 먼저 실행할 명령
+### 먼저 실행
 
 ~~~bash
 npm install react-router-dom
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - 설치 명령은 필요한 의존성을 자동으로 반영합니다.
 - 수동으로 자동 생성 파일을 타이핑하지 않습니다.
@@ -29,7 +29,7 @@ npm install react-router-dom
 
 `BrowserRouter`로 앱을 감싸고, `Routes` 안에 주소별 화면을 등록합니다. Header의 메뉴는 일반 `a` 태그 대신 React Router의 `Link`를 사용합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/App.jsx](../../src/App.jsx)
 - 수정: [src/components/Header.jsx](../../src/components/Header.jsx)
@@ -37,7 +37,7 @@ npm install react-router-dom
 - 새 파일: [src/pages/PostsPage.jsx](../../src/pages/PostsPage.jsx)
 - 수정: [src/index.css](../../src/index.css)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -151,7 +151,7 @@ index 0000000..851d6b5
 +export default PostsPage
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - `path="/about"`은 `/about` 주소에서 보여줄 화면을 뜻합니다.
 - `Link to="/posts"`는 Posts 화면으로 이동하는 링크입니다.
