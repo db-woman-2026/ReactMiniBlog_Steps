@@ -62,8 +62,9 @@ index 9da27a5..ece04d9 100644
 
 ### 설명과 확인
 
-- 정적인 주소인 `/posts/new`를 상세 주소보다 먼저 등록합니다.
-- Header에 New Post 링크를 추가해 form 화면으로 이동할 수 있게 합니다.
+- `/posts/new`의 `new`는 고정 segment이고 `/posts/:postId`의 `:postId`는 동적 segment입니다.
+- React Router는 더 구체적인 고정 주소를 우선 선택하므로 `new`를 게시글 id로 처리하지 않습니다.
+- Header의 New Post 링크는 `/posts/new` form으로 이동합니다.
 
 ## 작업 2. controlled input form 만들기
 
@@ -159,7 +160,7 @@ index 0000000..aa144b8
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+New Post 화면에서 제목과 내용을 입력할 때 Preview가 바로 바뀌는지 확인합니다.
 
 ## 독립 확인
 

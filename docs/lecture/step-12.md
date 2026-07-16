@@ -172,10 +172,10 @@ index 0000000..d1ece64
 +
 +export default EditPostPage
 diff --git a/src/pages/PostDetailPage.jsx b/src/pages/PostDetailPage.jsx
-index 1b954a2..35c8dc5 100644
+index fe0c6ad..a370b0c 100644
 --- a/src/pages/PostDetailPage.jsx
 +++ b/src/pages/PostDetailPage.jsx
-@@ -34,6 +34,7 @@ function PostDetailPage({ posts, onDelete }) {
+@@ -37,6 +37,7 @@ function PostDetailPage({ posts, onDelete }) {
        >
          Delete
        </button>
@@ -199,7 +199,7 @@ index 1b954a2..35c8dc5 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+Edit 화면에는 기존 값이 들어 있어야 합니다. 저장 후 같은 id의 상세 화면에서 제목과 내용만 바뀌었는지 확인합니다.
 
 ## 독립 확인
 
