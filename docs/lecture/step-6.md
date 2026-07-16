@@ -1,6 +1,6 @@
 # Step 6. 동적 라우트와 상세 페이지
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - 게시글 목록에서 상세 페이지로 이동합니다.
 - `/posts/:postId` 동적 라우트를 추가합니다.
@@ -10,12 +10,12 @@
 
 게시글마다 다른 상세 화면을 보여주기 위해 `/posts/:postId` 라우트를 추가합니다. `:postId`는 주소에서 바뀌는 값을 뜻합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/App.jsx](../../src/App.jsx)
 - 새 파일: [src/pages/PostDetailPage.jsx](../../src/pages/PostDetailPage.jsx)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -76,7 +76,7 @@ index 0000000..41946b8
 +export default PostDetailPage
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - `useParams`는 현재 주소에 들어 있는 동적 값을 읽습니다.
 - `posts.find(...)`는 배열에서 조건에 맞는 게시글 하나를 찾습니다.
@@ -86,12 +86,12 @@ index 0000000..41946b8
 
 게시글 제목을 클릭하면 해당 게시글 상세 주소로 이동하도록 `PostCard`에 링크를 추가합니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 수정: [src/components/PostCard.jsx](../../src/components/PostCard.jsx)
 - 수정: [src/pages/PostsPage.jsx](../../src/pages/PostsPage.jsx)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -128,7 +128,7 @@ index c9f7962..aef3c92 100644
            author={post.author}
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - 카드는 `id` props를 받아 `/posts/게시글id` 주소를 만듭니다.
 - 목록 화면은 각 게시글의 `id`도 `PostCard`에 넘겨야 합니다.
