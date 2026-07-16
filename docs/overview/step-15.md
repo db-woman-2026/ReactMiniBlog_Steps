@@ -1,6 +1,6 @@
 # Step 15. mock fetch와 Next.js 연결
 
-## 이 단계의 목표
+## 배울 내용
 
 `public/posts.json`에서 초기 데이터를 가져오며, React 선행 프로젝트와 Next.js 블로그 프로젝트의 연결 지점을 정리합니다.
 

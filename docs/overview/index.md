@@ -1,8 +1,6 @@
-# Overview Index
+# 단계별 개요
 
-이 문서는 `ReactMiniBlog_Steps`의 단계별 개요 목록입니다.
-
-상세 실습형 강의 자료인 `docs/lecture/`는 나중에 별도로 작성합니다. 현재는 각 단계의 목표와 결과를 빠르게 확인할 수 있는 `docs/overview/`만 둡니다.
+React 미니 블로그의 단계별 개요입니다. 입력 순서와 diff는 `docs/lecture/`에서 확인합니다.
 
 ## 전체 흐름
 
