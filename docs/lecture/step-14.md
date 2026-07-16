@@ -6,6 +6,12 @@
 - 새로고침 후에도 게시글 목록을 유지합니다.
 - `useEffect`로 state 변경 이후 저장 작업을 실행합니다.
 
+## 시작 전 확인
+
+권장 시간은 55분입니다. 이 문서의 diff는 `step-13` 완료 코드에 적용합니다. `step-14` branch는 아래 변경이 이미 반영된 완성본입니다.
+
+수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+
 ## 작업 1. localStorage로 게시글 유지하기
 
 state는 새로고침하면 사라집니다. 브라우저의 `localStorage`에 posts 배열을 문자열로 저장하고, 앱이 시작될 때 다시 읽습니다.
@@ -20,7 +26,7 @@ state는 새로고침하면 사라집니다. 브라우저의 `localStorage`에 p
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index 69eefc3..f4f3be3 100644
+index c856a63..8fece1a 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
 @@ -1,4 +1,4 @@
@@ -29,7 +35,7 @@ index 69eefc3..f4f3be3 100644
  import { BrowserRouter, Route, Routes } from 'react-router-dom'
  import Footer from './components/Footer'
  import Header from './components/Header'
-@@ -10,8 +10,28 @@ import NewPostPage from './pages/NewPostPage'
+@@ -10,8 +10,29 @@ import NewPostPage from './pages/NewPostPage'
  import PostDetailPage from './pages/PostDetailPage'
  import PostsPage from './pages/PostsPage'
  
@@ -43,7 +49,8 @@ index 69eefc3..f4f3be3 100644
 +  }
 +
 +  try {
-+    return JSON.parse(savedPosts)
++    const parsedPosts = JSON.parse(savedPosts)
++    return Array.isArray(parsedPosts) ? parsedPosts : initialPosts
 +  } catch {
 +    return initialPosts
 +  }
@@ -65,6 +72,7 @@ index 69eefc3..f4f3be3 100644
 
 - `localStorage.getItem`은 저장된 문자열을 읽습니다.
 - `JSON.parse`와 `JSON.stringify`로 배열과 문자열을 변환합니다.
+- JSON 문법이 맞아도 배열이 아니면 게시글 목록으로 사용할 수 없으므로 `Array.isArray()`로 확인합니다.
 - `useEffect`는 posts state가 바뀐 뒤 저장 작업을 실행합니다.
 
 ## 실행 확인
@@ -76,3 +84,7 @@ npm run dev
 ~~~
 
 브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+
+## 독립 확인
+
+개발자 도구에서 localStorage 값을 `{"title":"not an array"}`로 바꾸고 새로고침합니다. 초기 데이터로 회복되는지 확인하고 결과를 한 문장으로 기록합니다. 실험값은 다음 단계 전에 삭제합니다.

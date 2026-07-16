@@ -20,7 +20,8 @@ function loadInitialPosts() {
   }
 
   try {
-    return JSON.parse(savedPosts)
+    const parsedPosts = JSON.parse(savedPosts)
+    return Array.isArray(parsedPosts) ? parsedPosts : initialPosts
   } catch {
     return initialPosts
   }
@@ -42,17 +43,19 @@ function App() {
       author: 'Student',
     }
 
-    setPosts([newPost, ...posts])
+    setPosts((currentPosts) => [newPost, ...currentPosts])
     return newPost
   }
 
   function deletePost(id) {
-    setPosts(posts.filter((post) => post.id !== id))
+    setPosts((currentPosts) =>
+      currentPosts.filter((post) => post.id !== id),
+    )
   }
 
   function updatePost(id, postInput) {
-    setPosts(
-      posts.map((post) =>
+    setPosts((currentPosts) =>
+      currentPosts.map((post) =>
         post.id === id
           ? {
               ...post,
