@@ -75,12 +75,12 @@ index 0000000..8004dd2
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index 8fece1a..0c602dd 100644
+index 1da5f65..1db6b9b 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
-@@ -12,27 +12,73 @@ import PostsPage from './pages/PostsPage'
- 
- const STORAGE_KEY = 'react-mini-blog-posts'
+@@ -28,27 +28,73 @@ function isPostArray(value) {
+   )
+ }
  
 -function loadInitialPosts() {
 +function loadSavedPosts() {
@@ -93,8 +93,8 @@ index 8fece1a..0c602dd 100644
  
    try {
      const parsedPosts = JSON.parse(savedPosts)
--    return Array.isArray(parsedPosts) ? parsedPosts : initialPosts
-+    return Array.isArray(parsedPosts) ? parsedPosts : null
+-    return isPostArray(parsedPosts) ? parsedPosts : initialPosts
++    return isPostArray(parsedPosts) ? parsedPosts : null
    } catch {
 -    return initialPosts
 +    return null
@@ -124,8 +124,8 @@ index 8fece1a..0c602dd 100644
 +
 +        const starterPosts = await response.json()
 +
-+        if (!Array.isArray(starterPosts)) {
-+          throw new Error('Starter posts must be an array.')
++        if (!isPostArray(starterPosts)) {
++          throw new Error('Starter posts must contain valid posts.')
 +        }
 +
 +        if (!ignore) {
@@ -158,7 +158,7 @@ index 8fece1a..0c602dd 100644
  
    function createPost(postInput) {
      const newPost = {
-@@ -71,23 +117,30 @@ function App() {
+@@ -87,23 +133,30 @@ function App() {
    return (
      <BrowserRouter>
        <Header />
@@ -211,7 +211,7 @@ index 8fece1a..0c602dd 100644
 ### 설명과 확인
 
 - `fetch`는 주소로 데이터를 요청할 때 사용하는 기본 함수입니다.
-- 저장 데이터와 fetch 응답은 JSON 문법뿐 아니라 배열 형식도 확인합니다.
+- 저장 데이터와 fetch 응답은 `isPostArray`로 배열과 각 게시글 필드 형식을 함께 확인합니다.
 - 이 프로젝트에서는 정적 JSON을 가져오지만, Next.js에서는 API Route와 DB 요청으로 확장됩니다.
 - 로딩 중에는 목록 라우트 대신 로딩 화면을 보여줍니다.
 
@@ -223,8 +223,8 @@ index 8fece1a..0c602dd 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+localStorage를 비운 뒤 새로고침하면 Loading 화면을 거쳐 mock 게시글 세 개가 보이는지 확인합니다.
 
 ## 독립 확인
 
-localStorage를 비운 뒤 mock fetch 성공을 확인합니다. `posts.json`을 잠시 `{}`로 바꿔 fallback 목록도 확인하고, 결과를 기록한 뒤 파일을 복구합니다.
+localStorage를 비운 뒤 mock fetch 성공을 확인합니다. `posts.json`을 잠시 `{}`와 `[{"id":"1"}]`로 각각 바꿔 두 응답 모두 fallback 목록으로 복구되는지 확인합니다. 결과를 기록한 뒤 파일을 원래 JSON 배열로 복구합니다.
