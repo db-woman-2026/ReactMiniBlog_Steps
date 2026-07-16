@@ -1,6 +1,6 @@
 # Step 4. Props로 게시글 카드 만들기
 
-## 이번 스텝 주요 기능 Overview
+## 이번 단계에서 할 일
 
 - PostCard 컴포넌트에 게시글 데이터를 props로 전달합니다.
 - 데이터와 화면 컴포넌트를 분리합니다.
@@ -10,14 +10,14 @@
 
 게시글 카드 모양을 `PostCard` 컴포넌트로 만들고, 제목/요약/작성자 값을 props로 전달합니다. 아직 목록 반복은 하지 않고 게시글 하나만 보여줍니다.
 
-### 직접 수정할 파일
+### 수정할 파일
 
 - 새 파일: [src/components/PostCard.jsx](../../src/components/PostCard.jsx)
 - 새 파일: [src/data/posts.js](../../src/data/posts.js)
 - 수정: [src/pages/PostsPage.jsx](../../src/pages/PostsPage.jsx)
 - 수정: [src/index.css](../../src/index.css)
 
-### 이전 단계와 달라지는 코드
+### 코드 변경
 
 아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
 
@@ -87,7 +87,7 @@ index 851d6b5..bf69e47 100644
  }
 ~~~
 
-### 설명/확인 포인트
+### 설명과 확인
 
 - props는 부모가 자식 컴포넌트에 넘겨주는 값입니다.
 - `PostCard`는 데이터를 직접 만들지 않고 받은 값을 화면에 보여줍니다.
