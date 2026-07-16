@@ -17,7 +17,7 @@
 > Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
 
 ~~~bash
-npm install
+npm ci
 ~~~
 
 ## 작업 1. 기본 예제 화면 정리
@@ -331,7 +331,7 @@ index 2c84af0..0d5d564 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+브라우저에서 `React Mini Blog` 제목과 두 설명 문단이 보이는지 확인합니다. Vite 로고와 counter는 더 이상 보이지 않아야 합니다.
 
 ## 독립 확인
 
