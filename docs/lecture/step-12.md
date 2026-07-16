@@ -6,6 +6,12 @@
 - 기존 값을 form 초기값으로 넣습니다.
 - `map`으로 해당 게시글만 새 값으로 교체합니다.
 
+## 시작 전 확인
+
+권장 시간은 70분입니다. 이 문서의 diff는 `step-11` 완료 코드에 적용합니다. `step-12` branch는 아래 변경이 이미 반영된 완성본입니다.
+
+수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+
 ## 작업 1. 수정 함수와 edit 라우트 추가하기
 
 게시글 수정은 배열 안의 특정 게시글만 새 값으로 바꾸는 흐름입니다. App에 `updatePost` 함수를 만들고 edit 화면 라우트를 등록합니다.
@@ -20,7 +26,7 @@
 
 ~~~diff
 diff --git a/src/App.jsx b/src/App.jsx
-index bbbe0d5..69eefc3 100644
+index d39fcc4..c856a63 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
 @@ -4,6 +4,7 @@ import Footer from './components/Footer'
@@ -31,13 +37,13 @@ index bbbe0d5..69eefc3 100644
  import HomePage from './pages/HomePage'
  import NewPostPage from './pages/NewPostPage'
  import PostDetailPage from './pages/PostDetailPage'
-@@ -29,6 +30,21 @@ function App() {
-     setPosts(posts.filter((post) => post.id !== id))
+@@ -31,6 +32,21 @@ function App() {
+     )
    }
  
 +  function updatePost(id, postInput) {
-+    setPosts(
-+      posts.map((post) =>
++    setPosts((currentPosts) =>
++      currentPosts.map((post) =>
 +        post.id === id
 +          ? {
 +              ...post,
@@ -53,7 +59,7 @@ index bbbe0d5..69eefc3 100644
    return (
      <BrowserRouter>
        <Header />
-@@ -44,6 +60,10 @@ function App() {
+@@ -46,6 +62,10 @@ function App() {
            path="/posts/:postId"
            element={<PostDetailPage posts={posts} onDelete={deletePost} />}
          />
@@ -69,6 +75,7 @@ index bbbe0d5..69eefc3 100644
 ### 설명과 확인
 
 - `map`은 모든 게시글을 돌면서 수정 대상만 새 객체로 바꿉니다.
+- 함수형 updater의 `currentPosts`는 수정 시점의 최신 배열입니다.
 - `...post`는 기존 게시글의 나머지 값을 유지할 때 사용합니다.
 
 ## 작업 2. EditPostPage 만들기
@@ -193,3 +200,7 @@ npm run dev
 ~~~
 
 브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+
+## 독립 확인
+
+수정 전후 title, content, id가 어떻게 달라지는지 비교합니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.
