@@ -94,7 +94,7 @@ index 830bfd2..750cc2a 100644
      id: '1',
      title: 'Getting Started with React',
 diff --git a/src/pages/PostDetailPage.jsx b/src/pages/PostDetailPage.jsx
-index 803c95a..0f0dfeb 100644
+index 1c8b97b..257a7ee 100644
 --- a/src/pages/PostDetailPage.jsx
 +++ b/src/pages/PostDetailPage.jsx
 @@ -1,8 +1,7 @@
@@ -124,7 +124,7 @@ index aef3c92..faa7f21 100644
 
 ### 설명과 확인
 
-- 데이터를 바꿀 수 있게 하려면 state로 관리해야 합니다.
+- 게시글 배열은 작성할 때 바뀌므로 `App`의 state로 관리합니다.
 - `createPost`는 새 게시글 객체를 만들고 배열 앞에 추가합니다.
 - 자식 화면들은 props로 posts나 함수를 전달받습니다.
 
@@ -199,7 +199,7 @@ index aa144b8..9b53d8a 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+새 글을 작성하면 해당 상세 주소로 이동하고, 기존 글과 새 글이 Posts 목록에 함께 보이는지 확인합니다.
 
 ## 독립 확인
 

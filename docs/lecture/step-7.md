@@ -39,7 +39,7 @@ index d1b5caa..3ae4e1d 100644
  
  header,
 diff --git a/src/pages/PostDetailPage.jsx b/src/pages/PostDetailPage.jsx
-index 41946b8..803c95a 100644
+index 41946b8..1c8b97b 100644
 --- a/src/pages/PostDetailPage.jsx
 +++ b/src/pages/PostDetailPage.jsx
 @@ -1,9 +1,11 @@
@@ -54,11 +54,14 @@ index 41946b8..803c95a 100644
  
    if (!post) {
      return (
-@@ -20,6 +22,9 @@ function PostDetailPage() {
+@@ -20,6 +22,12 @@ function PostDetailPage() {
        <h1>{post.title}</h1>
        <p>Written by {post.author}</p>
        <p>{post.content}</p>
-+      <button type="button" onClick={() => setLikes(likes + 1)}>
++      <button
++        type="button"
++        onClick={() => setLikes((currentLikes) => currentLikes + 1)}
++      >
 +        Like {likes}
 +      </button>
        <Link to="/posts">Back to posts</Link>
@@ -70,6 +73,7 @@ index 41946b8..803c95a 100644
 
 - `useState(0)`은 처음 값을 0으로 둔 state를 만듭니다.
 - `onClick`은 버튼 클릭 이벤트를 처리합니다.
+- 다음 값이 이전 좋아요 수에 의존하므로 함수형 updater의 `currentLikes`를 사용합니다.
 - state가 바뀌면 React가 화면을 다시 그립니다.
 
 ## 실행 확인
@@ -80,7 +84,7 @@ index 41946b8..803c95a 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+Like 버튼을 연속으로 눌렀을 때 표시 숫자가 누른 횟수만큼 증가하는지 확인합니다.
 
 ## 독립 확인
 
