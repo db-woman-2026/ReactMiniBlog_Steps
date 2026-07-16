@@ -53,7 +53,7 @@ index 6580aec..d39fcc4 100644
        </Routes>
        <Footer />
 diff --git a/src/pages/PostDetailPage.jsx b/src/pages/PostDetailPage.jsx
-index 0f0dfeb..1b954a2 100644
+index 257a7ee..fe0c6ad 100644
 --- a/src/pages/PostDetailPage.jsx
 +++ b/src/pages/PostDetailPage.jsx
 @@ -1,8 +1,9 @@
@@ -68,8 +68,8 @@ index 0f0dfeb..1b954a2 100644
    const post = posts.find((item) => item.id === postId)
    const [likes, setLikes] = useState(0)
  
-@@ -24,6 +25,15 @@ function PostDetailPage({ posts }) {
-       <button type="button" onClick={() => setLikes(likes + 1)}>
+@@ -27,6 +28,15 @@ function PostDetailPage({ posts }) {
+       >
          Like {likes}
        </button>
 +      <button
@@ -91,7 +91,7 @@ index 0f0dfeb..1b954a2 100644
 - `filter`는 조건을 통과한 항목만 남긴 새 배열을 만듭니다.
 - 함수형 updater의 `currentPosts`는 삭제 시점의 최신 배열입니다.
 - 부모의 `deletePost` 함수를 상세 페이지에 props로 전달합니다.
-- 삭제 후 `navigate("/posts")`로 목록 화면으로 이동합니다.
+- 삭제 후 `navigate('/posts')`로 목록 화면으로 이동합니다.
 
 ## 실행 확인
 
@@ -101,7 +101,7 @@ index 0f0dfeb..1b954a2 100644
 npm run dev
 ~~~
 
-브라우저에서 이번 단계의 화면을 직접 눌러 확인합니다. 문제가 없으면 다음 step으로 넘어갑니다.
+Delete를 누르면 Posts 화면으로 이동하고 해당 카드가 사라지는지 확인합니다. 삭제 전 상세 주소를 다시 열면 Post not found가 보여야 합니다.
 
 ## 독립 확인
 
