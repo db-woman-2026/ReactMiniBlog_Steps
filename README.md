@@ -104,9 +104,18 @@ The `main` branch contains the complete React basics course. Overview and lectur
 
 ## Getting Started
 
+On Windows 11, complete the [Windows 11 setup](./docs/windows-11.md) first.
+
 ```bash
 npm ci
 npm run dev
+```
+
+If PowerShell blocks `npm.ps1`, use the Windows command shim:
+
+```powershell
+npm.cmd ci
+npm.cmd run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) after starting the development server.
