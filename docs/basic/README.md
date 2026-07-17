@@ -2,7 +2,7 @@
 
 미니 블로그 실습 전에 읽을 React 기초 자료입니다.
 
-Windows 11에서 실습한다면 먼저 [Windows 11 환경 준비](../windows-11.md)를 확인합니다.
+Windows 10/11에서 실습한다면 먼저 [Windows 개발 환경 준비](../windows-11.md)를 확인합니다.
 
 전체 일정은 [강의 운영안](../course-plan.md), 오류가 났을 때의 확인 순서는 [문제 해결](../troubleshooting.md)에서 확인합니다.
 

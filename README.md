@@ -39,13 +39,13 @@ These branches are not independent example copies. They are a parent-child learn
 
 When a change belongs to a specific lesson, commit it at the earliest affected branch and merge it forward one branch at a time. Project-wide documentation or maintenance changes start from `main` and are propagated through the full chain. Do not create unrelated copies of the same commit on multiple branches.
 
-```bash
+```powershell
 git merge-base --is-ancestor step-N step-(N+1)
 ```
 
 Students can inspect completed stages with:
 
-```bash
+```powershell
 git switch step-1
 git switch step-2
 ```
@@ -106,29 +106,27 @@ Each documentation folder uses its index or `README.md` as an entry point, so st
 
 ## Getting Started
 
-On Windows 11, complete the [Windows 11 setup](./docs/windows-11.md) first.
-
-```bash
-npm ci
-npm run dev
-```
-
-If PowerShell blocks `npm.ps1`, use the Windows command shim:
+Windows 10/11 students use Windows Terminal with PowerShell. Complete the [Windows setup](./docs/windows-11.md) first, then open the project from the course workspace.
 
 ```powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
 npm.cmd ci
+npm.cmd run lint
+npm.cmd run build
 npm.cmd run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) after starting the development server.
+In PowerShell, `$HOME` and `$env:USERPROFILE` both point to the current user's profile folder. `%USERPROFILE%` is `cmd.exe` syntax, not PowerShell syntax. Keep paths in quotes when they may contain spaces.
+
+Open the `Local` address printed by Vite. It is normally [http://localhost:5173](http://localhost:5173), but Vite uses the next available port when 5173 is already occupied. Stop the server with `Ctrl+C`.
 
 ## Scripts
 
-```bash
-npm run dev
-npm run build
-npm run lint
-npm run preview
+```powershell
+npm.cmd run dev
+npm.cmd run build
+npm.cmd run lint
+npm.cmd run preview
 ```
 
 ## Stack At `step-15`
