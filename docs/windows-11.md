@@ -26,10 +26,10 @@ Windows PowerShell 5.1과 PowerShell 7 모두 이 강의를 진행할 수 있습
 | 프로그램 | 강의 기준 | 공식 설치 안내 |
 | --- | --- | --- |
 | Node.js | 22.13.0 이상 | [Node.js 다운로드](https://nodejs.org/en/download) |
-| Git for Windows | 2.47.0 이상 | [Git for Windows 설치](https://git-scm.com/install/windows) |
-| Visual Studio Code | 1.96.0 이상 | [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows) |
-| Windows Terminal | 1.21 이상 | [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install) |
-| GitHub CLI | 2.65.0 이상 | [GitHub CLI](https://cli.github.com/) |
+| Git for Windows | 공식 최신 안정판 | [Git for Windows 설치](https://git-scm.com/install/windows) |
+| Visual Studio Code | 공식 최신 안정판 | [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows) |
+| Windows Terminal | Microsoft Store의 최신 안정판 | [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install) |
+| GitHub CLI | 공식 최신 안정판 | [GitHub CLI](https://cli.github.com/) |
 
 Vite 8 자체는 Node.js 20.19 이상 또는 22.12 이상을 요구합니다. 이 과정은 다른 강의 프로젝트와 버전을 맞추기 위해 Node.js 22.13.0 이상을 강의 기준으로 사용합니다. 자세한 요구 버전은 [Vite 8 공식 안내](https://vite.dev/blog/announcing-vite8)에서 확인합니다.
 
