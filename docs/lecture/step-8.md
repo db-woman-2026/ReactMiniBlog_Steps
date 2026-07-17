@@ -10,7 +10,15 @@
 
 권장 시간은 60분입니다. 이 문서의 diff는 `step-7` 완료 코드에 적용합니다. `step-8` branch는 아래 변경이 이미 반영된 완성본입니다.
 
-수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+
+~~~powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git switch step-7
+git status --short
+~~~
+
+`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. 새 글 작성 주소와 메뉴 추가하기
 
@@ -152,12 +160,14 @@ index 0000000..aa144b8
 - controlled input은 `value`와 `onChange`가 state와 연결된 입력창입니다.
 - 입력값이 바뀔 때마다 state가 바뀌고 preview도 함께 바뀝니다.
 
-## 실행 확인
+## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
-~~~bash
-npm run dev
+~~~powershell
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run dev
 ~~~
 
 New Post 화면에서 제목과 내용을 입력할 때 Preview가 바로 바뀌는지 확인합니다.

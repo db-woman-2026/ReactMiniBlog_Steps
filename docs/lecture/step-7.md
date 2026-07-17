@@ -10,7 +10,15 @@
 
 권장 시간은 40분입니다. 이 문서의 diff는 `step-6` 완료 코드에 적용합니다. `step-7` branch는 아래 변경이 이미 반영된 완성본입니다.
 
-수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+
+~~~powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git switch step-6
+git status --short
+~~~
+
+`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. 좋아요 버튼으로 이벤트와 state 연습하기
 
@@ -76,12 +84,14 @@ index 41946b8..1c8b97b 100644
 - 다음 값이 이전 좋아요 수에 의존하므로 함수형 updater의 `currentLikes`를 사용합니다.
 - state가 바뀌면 React가 화면을 다시 그립니다.
 
-## 실행 확인
+## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
-~~~bash
-npm run dev
+~~~powershell
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run dev
 ~~~
 
 Like 버튼을 연속으로 눌렀을 때 표시 숫자가 누른 횟수만큼 증가하는지 확인합니다.

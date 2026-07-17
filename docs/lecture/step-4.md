@@ -10,7 +10,15 @@
 
 권장 시간은 40분입니다. 이 문서의 diff는 `step-3` 완료 코드에 적용합니다. `step-4` branch는 아래 변경이 이미 반영된 완성본입니다.
 
-수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+
+~~~powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git switch step-3
+git status --short
+~~~
+
+`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. PostCard에 props 전달하기
 
@@ -99,12 +107,14 @@ index 851d6b5..bf69e47 100644
 - `PostCard`는 데이터를 직접 만들지 않고 받은 값을 화면에 보여줍니다.
 - 데이터 파일을 따로 두면 화면 코드와 샘플 데이터를 구분해서 볼 수 있습니다.
 
-## 실행 확인
+## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
-~~~bash
-npm run dev
+~~~powershell
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run dev
 ~~~
 
 Posts 화면에 제목, 요약, 작성자가 들어 있는 게시글 카드 하나가 보이는지 확인합니다.
