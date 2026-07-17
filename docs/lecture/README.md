@@ -2,7 +2,7 @@
 
 전체 일정은 [강의 운영안](../course-plan.md), 막혔을 때의 확인 순서는 [문제 해결](../troubleshooting.md)에서 확인합니다.
 
-Windows 10/11 수강생은 먼저 [Windows 개발 환경 준비](../windows-11.md)를 끝냅니다. Windows Terminal의 PowerShell을 사용하고, 프로젝트 경로는 `$HOME\dongbu\ReactMiniBlog_Steps`를 기준으로 합니다.
+Windows 11 수강생은 먼저 [Windows 개발 환경 준비](../windows-11.md)를 끝냅니다. Windows Terminal의 PowerShell을 사용하고, 프로젝트 경로는 `$HOME\dongbu\ReactMiniBlog_Steps`를 기준으로 합니다.
 
 `step-N` 문서는 `step-(N-1)` 완료 코드에 적용합니다. 현재 `step-N` branch는 해당 변경이 이미 반영된 강사용 참고 완성본입니다.
 

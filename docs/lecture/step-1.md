@@ -22,7 +22,7 @@ git status --short
 
 처음 프로젝트를 받은 뒤에는 의존성을 설치합니다. 이 명령이 끝나야 개발 서버와 빌드 명령을 실행할 수 있습니다.
 
-> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 PowerShell 실행 정책과 관계없이 동작하는 `npm.cmd`로 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 PowerShell 실행 정책과 관계없이 동작하는 `npm.cmd`로 실행합니다.
 
 ~~~powershell
 npm.cmd ci
