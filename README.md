@@ -106,7 +106,7 @@ Each documentation folder uses its index or `README.md` as an entry point, so st
 
 ## Getting Started
 
-Windows 10/11 students use Windows Terminal with PowerShell. Complete the [Windows setup](./docs/windows-11.md) first, then open the project from the course workspace.
+Windows 11 students use Windows Terminal with PowerShell. Complete the [Windows setup](./docs/windows-11.md) first, then open the project from the course workspace.
 
 ```powershell
 Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
@@ -116,7 +116,7 @@ npm.cmd run build
 npm.cmd run dev
 ```
 
-In PowerShell, `$HOME` and `$env:USERPROFILE` both point to the current user's profile folder. `%USERPROFILE%` is `cmd.exe` syntax, not PowerShell syntax. Keep paths in quotes when they may contain spaces.
+In PowerShell, `$HOME` and `$env:USERPROFILE` both point to the current user's profile folder. Keep the course at `$HOME\dongbu` and wrap paths in quotes when they may contain spaces.
 
 Open the `Local` address printed by Vite. It is normally [http://localhost:5173](http://localhost:5173), but Vite uses the next available port when 5173 is already occupied. Stop the server with `Ctrl+C`.
 
