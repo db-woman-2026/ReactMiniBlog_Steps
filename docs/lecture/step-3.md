@@ -10,7 +10,15 @@
 
 권장 시간은 60분입니다. 이 문서의 diff는 `step-2` 완료 코드에 적용합니다. `step-3` branch는 아래 변경이 이미 반영된 완성본입니다.
 
-수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+
+~~~powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git switch step-2
+git status --short
+~~~
+
+`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. React Router 설치
 
@@ -22,10 +30,10 @@ Vite는 React 앱을 실행해주는 도구이고, 라우팅은 직접 추가해
 
 ### 먼저 실행
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
-~~~bash
-npm install react-router-dom@^7.18.1
+~~~powershell
+npm.cmd install 'react-router-dom@^7.18.1'
 ~~~
 
 ### 설명과 확인
@@ -165,10 +173,12 @@ index 0000000..851d6b5
 - `Link to="/posts"`는 Posts 화면으로 이동하는 링크입니다.
 - Next.js와 달리 React Router는 파일 위치가 아니라 코드로 라우트를 등록합니다.
 
-## 실행 확인
+## 완료 결과 및 실행 확인
 
-~~~bash
-npm run dev
+~~~powershell
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run dev
 ~~~
 
 Header의 Home, About, Posts 링크를 차례로 눌러 주소와 화면이 함께 바뀌는지 확인합니다.
