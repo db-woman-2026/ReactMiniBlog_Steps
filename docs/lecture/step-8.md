@@ -162,7 +162,7 @@ index 0000000..aa144b8
 
 ## 완료 결과 및 실행 확인
 
-> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
 ~~~powershell
 npm.cmd run lint
