@@ -10,7 +10,15 @@
 
 권장 시간은 60분입니다. 이 문서의 diff는 `step-8` 완료 코드에 적용합니다. `step-9` branch는 아래 변경이 이미 반영된 완성본입니다.
 
-수정 전에 `git status --short`의 출력이 없는지 확인합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+
+~~~powershell
+Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git switch step-8
+git status --short
+~~~
+
+`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. 게시글 배열을 App state로 올리기
 
@@ -191,12 +199,14 @@ index aa144b8..9b53d8a 100644
 - `useNavigate`는 코드로 다른 주소로 이동할 때 사용합니다.
 - 이 단계의 작성은 서버 저장이 아니라 state 배열에 객체를 추가하는 흐름입니다.
 
-## 실행 확인
+## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
-~~~bash
-npm run dev
+~~~powershell
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run dev
 ~~~
 
 새 글을 작성하면 해당 상세 주소로 이동하고, 기존 글과 새 글이 Posts 목록에 함께 보이는지 확인합니다.
