@@ -18,7 +18,7 @@ Vite가 만든 기본 예제 화면을 지우고, 학생이 직접 읽기 쉬운
 
 ## 확인 방법
 
-> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. Windows Terminal의 PowerShell에서 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. Windows Terminal의 PowerShell에서 실행합니다.
 
 ```powershell
 npm.cmd run lint
