@@ -130,17 +130,17 @@ index.html
 
 ## 7. 개발 명령의 의미
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. `git`, `node`, `npm` 명령은 PowerShell에서도 같습니다. `npm.ps1` 오류가 나면 `npm.cmd`를 사용합니다.
+> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. 이 강의의 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
 
-~~~bash
-npm install
-npm run dev
-npm run build
+~~~powershell
+npm.cmd ci
+npm.cmd run dev
+npm.cmd run build
 ~~~
 
-- `npm install`: `package.json`에 적힌 패키지를 설치합니다.
-- `npm run dev`: 개발 서버를 실행합니다. 파일을 저장하면 브라우저가 빠르게 갱신됩니다.
-- `npm run build`: 배포할 수 있는 결과물을 만들 수 있는지 확인합니다.
+- `npm.cmd ci`: `package-lock.json`에 기록된 버전 그대로 패키지를 설치합니다.
+- `npm.cmd run dev`: 개발 서버를 실행합니다. 파일을 저장하면 브라우저가 빠르게 갱신됩니다.
+- `npm.cmd run build`: 배포할 수 있는 결과물을 만들 수 있는지 확인합니다.
 
 ## 코드 읽기 연습
 
