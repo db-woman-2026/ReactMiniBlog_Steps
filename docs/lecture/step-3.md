@@ -30,7 +30,7 @@ Vite는 React 앱을 실행해주는 도구이고, 라우팅은 직접 추가해
 
 ### 먼저 실행
 
-> Windows 10/11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
 
 ~~~powershell
 npm.cmd install 'react-router-dom@^7.18.1'

@@ -9,7 +9,7 @@
 - `docs/basic/README.md`의 12개 챕터를 먼저 읽습니다.
 - `git status --short`의 출력이 없는 상태에서 다음 branch로 이동합니다.
 
-Windows 10/11 명령과 경로는 [Windows 개발 환경 준비](./windows-11.md)를 따릅니다.
+Windows 11 명령과 경로는 [Windows 개발 환경 준비](./windows-11.md)를 따릅니다.
 
 ## 수업 구성
 
