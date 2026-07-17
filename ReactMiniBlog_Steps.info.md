@@ -22,7 +22,7 @@ Branches are cumulative. `step-2` is based on `step-1`, `step-3` is based on `st
 
 The branch chain should preserve this invariant:
 
-```bash
+```powershell
 git merge-base --is-ancestor step-N step-(N+1)
 ```
 
