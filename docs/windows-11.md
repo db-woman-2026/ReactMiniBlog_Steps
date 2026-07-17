@@ -1,6 +1,6 @@
 # Windows 10/11 개발 환경 준비
 
-이 강의는 Windows Terminal 안의 PowerShell을 기준으로 진행합니다. Windows Terminal은 여러 셸을 담는 창이고, PowerShell은 그 안에서 명령을 해석하는 셸입니다. 명령 프롬프트(`cmd.exe`)나 Git Bash를 열지 말고 PowerShell 탭을 사용합니다.
+이 강의는 Windows Terminal 안의 **Windows PowerShell 5.1** 프로필을 기준으로 진행합니다. Windows Terminal은 여러 셸을 담는 창이고, PowerShell은 그 안에서 명령을 해석하는 셸입니다. 명령 프롬프트(`cmd.exe`)나 Git Bash가 아니라 이름이 `Windows PowerShell`인 탭을 사용합니다.
 
 React 코드와 Vite 명령은 Windows 10과 Windows 11에서 같습니다. 차이가 날 수 있는 부분은 프로그램 설치 화면, `winget` 제공 여부, Windows Terminal 기본 설치 여부, 방화벽 화면입니다.
 
@@ -17,7 +17,11 @@ $PSVersionTable.PSEdition
 Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNumber
 ```
 
-Windows PowerShell 5.1과 PowerShell 7 모두 이 강의를 진행할 수 있습니다. 문서에서는 두 버전에서 공통으로 동작하는 명령만 사용하며, PowerShell 7 전용 명령 연결자인 `&&`는 사용하지 않습니다.
+강의를 위해 PowerShell 7을 새로 설치하거나 최신 버전으로 올릴 필요는 없습니다. 기존 PowerShell 7이 정상 실행되는 PC에서도 같은 명령을 쓸 수 있도록 문서는 5.1과 공통인 문법만 사용하며, PowerShell 7 전용 명령 연결자인 `&&`는 사용하지 않습니다.
+
+Windows 10 Pro 22H2 빌드 19045에서는 Microsoft 서명 PowerShell 7.6.3이 `Fatal error. Your Windows doesn't fully support CET` 오류로 즉시 종료되는 사례를 실측했습니다. 이 경우 PowerShell 7 설정을 바꾸지 말고 Windows 기본 제공 5.1 프로필로 실습합니다.
+
+> !@#Need Windows 11 Check!@# 수업용 Windows 11 PC에서 PowerShell 7.6.3의 CET 오류 발생 여부를 별도로 확인합니다. 확인 전까지 PowerShell 7.6.3은 강의 필수 도구가 아닙니다.
 
 이 문서는 Windows 10 Pro 22H2 빌드 19045, Windows PowerShell 5.1에서 전체 단계를 검증했습니다. Windows 11에서만 달라질 수 있는 화면은 위 표시를 남겼습니다.
 
