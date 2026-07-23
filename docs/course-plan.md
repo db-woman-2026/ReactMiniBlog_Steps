@@ -44,7 +44,7 @@ Vite 프로젝트에서 JSX, 컴포넌트, 라우팅, 상태, 입력, 저장과 
 - 각 단계의 실행 결과와 독립 확인을 기록했습니다.
 - 새 글 추가, 공백 검증, 수정, 삭제와 검색을 브라우저에서 확인했습니다.
 - 저장값이나 mock fetch 응답이 게시글 형식의 배열이 아닐 때 초기 데이터로 복구됩니다.
-- 마지막 코드에서 `npm.cmd run lint`와 `npm.cmd run build`가 통과합니다.
+- 마지막 코드에서 `npm run lint`와 `npm run build`가 통과합니다.
 - 개인 저장소의 `main`과 원격 `main`이 같은 commit을 가리킵니다.
 
 막힌 경우 파일을 임의로 지우거나 다른 Step의 코드를 가져오기 전에 [문제 해결](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 문제 해결」 · 절 「1. 프로젝트 폴더와 시작 상태 확인」)</span>에서 증상에 맞는 진단 절차를 확인합니다.
