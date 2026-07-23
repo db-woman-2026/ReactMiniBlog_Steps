@@ -8,17 +8,17 @@
 
 ## 시작 전 확인
 
-권장 시간은 55분입니다. 이 문서의 diff는 `step-13` 완료 코드에 적용합니다. `step-14` branch는 아래 변경이 이미 반영된 완성본입니다.
+권장 시간은 55분입니다. 개인 실습 저장소의 `main`에서 직전 단계까지 마친 상태로 시작합니다. 코드 블록은 복사해 붙이지 않고 직접 입력합니다.
 
-Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+Windows Terminal의 PowerShell에서 개인 저장소의 `main`과 변경 상태를 확인합니다.
 
 ~~~powershell
 Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git switch step-13
+git branch --show-current
 git status --short
 ~~~
 
-`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+`git branch --show-current`에는 `main`이 표시되고 `git status --short`의 출력은 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. localStorage로 게시글 유지하기
 
@@ -26,7 +26,7 @@ state는 새로고침하면 사라집니다. 브라우저의 `localStorage`에 p
 
 ### 수정할 파일
 
-- 수정: [src/App.jsx](../../src/App.jsx)
+- 수정: `src/App.jsx`
 
 ### 코드 변경
 
@@ -115,3 +115,22 @@ npm.cmd run dev
 ## 독립 확인
 
 개발자 도구에서 localStorage 값을 `{"title":"not an array"}`와 `[{"id":"1"}]`로 각각 바꾸고 새로고침합니다. 두 경우 모두 초기 데이터로 회복되는지 확인하고 결과를 한 문장으로 기록합니다. 실험값은 다음 단계 전에 삭제합니다.
+
+## 저장소에 기록하기
+
+실험용 변경을 모두 복구한 뒤 검사 결과와 코드 변경을 함께 확인합니다.
+
+```powershell
+git branch --show-current
+git status --short
+git diff
+npm.cmd run lint
+npm.cmd run build
+git add .
+git diff --staged
+git commit -m "Complete React step 14"
+git push origin main
+git status --short --branch
+```
+
+현재 브랜치는 `main`이어야 합니다. 마지막 상태에서 `main...origin/main` 뒤에 `ahead`가 없고 작업 파일 목록도 비어 있어야 합니다.

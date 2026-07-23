@@ -153,7 +153,7 @@ function App() {
   return (
     <main>
       <Welcome />
-      <p>프로젝트 구조를 살펴봅니다.</p>
+      <p>프로젝트 구조를 확인합니다.</p>
     </main>
   )
 }

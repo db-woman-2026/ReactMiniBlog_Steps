@@ -1,141 +1,36 @@
-# ReactMiniBlog_Steps
+# React 미니 블로그 실습
 
-`ReactMiniBlog_Steps` is a beginner-friendly React mini blog curriculum built with Vite.
+Vite로 만든 starter에서 시작해 컴포넌트, props, state, form, Router, localStorage를 한 단계씩 구현합니다. 개인 저장소의 `main`에서 모든 코드를 직접 입력하고 각 단계가 끝날 때 검사·commit·push합니다.
 
-This project prepares students for `NextJsBlog_Steps`. It focuses on JSX, components, props, arrays, routing, state, forms, browser-side CRUD, search, and browser storage before server and database concepts are introduced.
+## 시작 순서
 
-## Teaching Model
+1. [Windows 11 환경 준비](docs/windows-11.md)를 끝냅니다.
+2. [React 기초 읽기 자료](docs/basic/README.md)를 확인합니다.
+3. [과정 계획](docs/course-plan.md)에서 15단계 순서를 확인합니다.
+4. [단계별 실습](docs/lecture/README.md)을 Step 1부터 진행합니다.
 
-`main` contains the starter project and the complete basic reading course. Students read `docs/basic/` first, then move through the cumulative practice branches in order. Instructors can use each `step-N` branch as the completed reference for that lesson.
+## 실습 범위
 
-```text
-main -> step-1 -> step-2 -> ... -> step-15
-```
+- JSX와 컴포넌트
+- props와 배열 렌더링
+- React Router와 동적 주소
+- event와 state
+- controlled input과 게시글 CRUD
+- 검증, 조건부 렌더링, 검색
+- localStorage와 mock fetch
 
-## Learning Path
-
-| Branch | Focus |
-| --- | --- |
-| `main` | Vite starter and React basic reading course |
-| `step-1` | First JSX mini blog screen |
-| `step-2` | Header, Footer, and page component separation |
-| `step-3` | React Router pages and navigation |
-| `step-4` | Reusable post card with props |
-| `step-5` | Array and list rendering with `map` |
-| `step-6` | Dynamic post detail route |
-| `step-7` | Events and local state |
-| `step-8` | Controlled new-post form |
-| `step-9` | Create a post in state |
-| `step-10` | Input validation and conditional errors |
-| `step-11` | Delete a post |
-| `step-12` | Edit and update a post |
-| `step-13` | Client-side keyword search |
-| `step-14` | Persist posts in `localStorage` |
-| `step-15` | Load starter posts from mock JSON and prepare for Next.js |
-
-## Branch Maintenance
-
-These branches are not independent example copies. They are a parent-child learning chain, and future changes must preserve that ancestry.
-
-When a change belongs to a specific lesson, commit it at the earliest affected branch and merge it forward one branch at a time. Project-wide documentation or maintenance changes start from `main` and are propagated through the full chain. Do not create unrelated copies of the same commit on multiple branches.
+## 매 단계 공통 확인
 
 ```powershell
-git merge-base --is-ancestor step-N step-(N+1)
-```
-
-Students can inspect completed stages with:
-
-```powershell
-git switch step-1
-git switch step-2
-```
-
-## Completed App At `step-15`
-
-The final branch is still a frontend-only learning project, but it contains a complete browser-based mini blog flow:
-
-- shared Header and Footer components
-- list and detail pages with dynamic routes
-- create, update, and delete flows held in React state
-- input validation and not-found handling
-- client-side keyword search
-- starter data loaded from `public/posts.json`
-- browser persistence with `localStorage`
-
-### Routes
-
-| Route | Purpose |
-| --- | --- |
-| `/` | Course home |
-| `/about` | Project introduction |
-| `/posts` | Searchable post list |
-| `/posts/new` | New-post form |
-| `/posts/:postId` | Post detail, like, and delete actions |
-| `/posts/:postId/edit` | Edit-post form |
-
-### Data Flow
-
-When no saved data exists, the app fetches `/posts.json`. If the request fails or the response is not a valid post array, it falls back to `src/data/posts.js`. After loading, every post change is saved under the `react-mini-blog-posts` key in `localStorage`.
-
-This is intentionally a mock frontend data flow. `step-15` uses it to make the transition to the server and database flow in `NextJsBlog_Steps` easier to understand.
-
-## Project Structure At `step-15`
-
-```text
-docs/basic/       prerequisite React and JavaScript reading
-docs/overview/    short step summaries
-docs/lecture/     detailed hands-on lesson documents
-public/posts.json mock starter data
-src/components/   shared UI components
-src/data/         fallback starter data
-src/pages/        routed page components
-src/App.jsx       routes, post state, persistence, and CRUD handlers
-```
-
-## Documentation
-
-Read the available documents in this order:
-
-1. On `main`, read `docs/basic/README.md` and `docs/basic/chapter-N.md`.
-2. After switching to a practice branch, read `docs/overview/index.md` and the matching `docs/overview/step-N.md`.
-3. Follow `docs/lecture/README.md` and the matching `docs/lecture/step-N.md` for hands-on work.
-
-The `main` branch contains the complete React basics course. Overview and lecture documents are added cumulatively to their matching `step-N` branches. After the basics, switch to `step-1` and follow the practice branches in order.
-
-Each documentation folder uses its index or `README.md` as an entry point, so students can open the folder and follow the available chapter or step list from there.
-
-## Getting Started
-
-Windows 11 students use Windows Terminal with PowerShell. Complete the [Windows setup](./docs/windows-11.md) first, then open the project from the course workspace.
-
-```powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-npm.cmd ci
+git branch --show-current
+git status --short
 npm.cmd run lint
 npm.cmd run build
-npm.cmd run dev
+git diff
+git add .
+git diff --staged
+git commit -m "Complete React step N"
+git push origin main
 ```
 
-In PowerShell, `$HOME` and `$env:USERPROFILE` both point to the current user's profile folder. Keep the course at `$HOME\dongbu` and wrap paths in quotes when they may contain spaces.
-
-Open the `Local` address printed by Vite. It is normally [http://localhost:5173](http://localhost:5173), but Vite uses the next available port when 5173 is already occupied. Stop the server with `Ctrl+C`.
-
-## Scripts
-
-```powershell
-npm.cmd run dev
-npm.cmd run build
-npm.cmd run lint
-npm.cmd run preview
-```
-
-## Stack At `step-15`
-
-- React 19
-- React Router 7
-- Vite 8
-- Oxlint
-
-## Scope
-
-The project intentionally avoids backend APIs, databases, authentication, TypeScript, Tailwind CSS, and production architecture. Those topics belong to later courses.
+현재 branch는 항상 `main`입니다. 실험용 변경을 복구하고 lint와 build가 모두 통과한 뒤 commit합니다.

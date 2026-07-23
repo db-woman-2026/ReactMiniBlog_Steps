@@ -8,17 +8,17 @@
 
 ## 시작 전 확인
 
-권장 시간은 45분입니다. 이 문서의 diff는 `step-1` 완료 코드에 적용합니다. `step-2` branch는 아래 변경이 이미 반영된 완성본입니다.
+권장 시간은 45분입니다. 개인 실습 저장소의 `main`에서 직전 단계까지 마친 상태로 시작합니다. 코드 블록은 복사해 붙이지 않고 직접 입력합니다.
 
-Windows Terminal의 PowerShell에서 시작 branch와 변경 상태를 확인합니다.
+Windows Terminal의 PowerShell에서 개인 저장소의 `main`과 변경 상태를 확인합니다.
 
 ~~~powershell
 Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git switch step-1
+git branch --show-current
 git status --short
 ~~~
 
-`git status --short`의 출력이 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+`git branch --show-current`에는 `main`이 표시되고 `git status --short`의 출력은 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
 
 ## 작업 1. 화면을 작은 컴포넌트로 나누기
 
@@ -26,11 +26,11 @@ git status --short
 
 ### 수정할 파일
 
-- 수정: [src/App.jsx](../../src/App.jsx)
-- 새 파일: [src/components/Header.jsx](../../src/components/Header.jsx)
-- 새 파일: [src/components/Footer.jsx](../../src/components/Footer.jsx)
-- 새 파일: [src/pages/HomePage.jsx](../../src/pages/HomePage.jsx)
-- 수정: [src/index.css](../../src/index.css)
+- 수정: `src/App.jsx`
+- 새 파일: `src/components/Header.jsx`
+- 새 파일: `src/components/Footer.jsx`
+- 새 파일: `src/pages/HomePage.jsx`
+- 수정: `src/index.css`
 
 ### 코드 변경
 
@@ -160,3 +160,22 @@ npm.cmd run dev
 ## 독립 확인
 
 Header와 Footer 중 하나의 문구를 props로 전달하려면 어느 경계를 바꿀지 적습니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.
+
+## 저장소에 기록하기
+
+실험용 변경을 모두 복구한 뒤 검사 결과와 코드 변경을 함께 확인합니다.
+
+```powershell
+git branch --show-current
+git status --short
+git diff
+npm.cmd run lint
+npm.cmd run build
+git add .
+git diff --staged
+git commit -m "Complete React step 2"
+git push origin main
+git status --short --branch
+```
+
+현재 브랜치는 `main`이어야 합니다. 마지막 상태에서 `main...origin/main` 뒤에 `ahead`가 없고 작업 파일 목록도 비어 있어야 합니다.
