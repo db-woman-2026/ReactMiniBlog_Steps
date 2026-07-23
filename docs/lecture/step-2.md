@@ -1,6 +1,6 @@
 # Step 2. 컴포넌트 분리
 
-## 이번 단계에서 할 일
+## 변경 내용
 
 - 화면을 Header, Footer, HomePage 컴포넌트로 나눕니다.
 - 파일을 나누고 import/export로 연결합니다.
@@ -8,17 +8,16 @@
 
 ## 시작 전 확인
 
-권장 시간은 45분입니다. 개인 실습 저장소의 `main`에서 직전 단계까지 마친 상태로 시작합니다. 코드 블록은 복사해 붙이지 않고 직접 입력합니다.
+개인 저장소의 `main`에 Step 1 결과를 commit하고 GitHub에 push한 상태로 시작합니다.
 
-Windows Terminal의 PowerShell에서 개인 저장소의 `main`과 변경 상태를 확인합니다.
+Windows Terminal의 PowerShell에서 개인 프로젝트 폴더로 이동하고 현재 상태를 확인합니다.
 
 ~~~powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git branch --show-current
-git status --short
+Set-Location "$HOME\dongbu\react-mini-blog"
+git status
 ~~~
 
-`git branch --show-current`에는 `main`이 표시되고 `git status --short`의 출력은 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+`main`에 있고 아직 저장하지 않은 변경 파일이 없어야 합니다. 각 코드 블록 위의 파일 경로를 확인한 뒤 해당 파일의 전체 내용을 직접 입력합니다.
 
 ## 작업 1. 화면을 작은 컴포넌트로 나누기
 
@@ -30,113 +29,80 @@ git status --short
 - 새 파일: `src/components/Header.jsx`
 - 새 파일: `src/components/Footer.jsx`
 - 새 파일: `src/pages/HomePage.jsx`
-- 수정: `src/index.css`
 
-### 코드 변경
+### 입력할 코드
 
-아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
+#### `src/App.jsx`
 
-~~~diff
-diff --git a/src/App.jsx b/src/App.jsx
-index b0cfd96..5ac0d71 100644
---- a/src/App.jsx
-+++ b/src/App.jsx
-@@ -1,16 +1,14 @@
-+import Footer from './components/Footer'
-+import Header from './components/Header'
-+import HomePage from './pages/HomePage'
-+
- function App() {
-   return (
--    <main>
--      <h1>React Mini Blog</h1>
--      <p>
--        This project practices React fundamentals before moving to the Next.js
--        blog project.
--      </p>
--      <p>
--        In the first step, focus on reading JSX and changing text on the
--        screen.
--      </p>
--    </main>
-+    <>
-+      <Header />
-+      <HomePage />
-+      <Footer />
-+    </>
-   )
- }
- 
-diff --git a/src/components/Footer.jsx b/src/components/Footer.jsx
-new file mode 100644
-index 0000000..3a1c86d
---- /dev/null
-+++ b/src/components/Footer.jsx
-@@ -0,0 +1,5 @@
-+function Footer() {
-+  return <footer>React fundamentals before Next.js</footer>
-+}
-+
-+export default Footer
-diff --git a/src/components/Header.jsx b/src/components/Header.jsx
-new file mode 100644
-index 0000000..93c04b5
---- /dev/null
-+++ b/src/components/Header.jsx
-@@ -0,0 +1,9 @@
-+function Header() {
-+  return (
-+    <header>
-+      <strong>React Mini Blog</strong>
-+    </header>
-+  )
-+}
-+
-+export default Header
-diff --git a/src/index.css b/src/index.css
-index 0d5d564..e0156c2 100644
---- a/src/index.css
-+++ b/src/index.css
-@@ -20,3 +20,17 @@ textarea {
- button {
-   cursor: pointer;
- }
-+
-+header,
-+footer {
-+  padding: 16px 0;
-+}
-+
-+header {
-+  border-bottom: 1px solid #ddd;
-+}
-+
-+footer {
-+  border-top: 1px solid #ddd;
-+  color: #666;
-+}
-diff --git a/src/pages/HomePage.jsx b/src/pages/HomePage.jsx
-new file mode 100644
-index 0000000..5f3251c
---- /dev/null
-+++ b/src/pages/HomePage.jsx
-@@ -0,0 +1,16 @@
-+function HomePage() {
-+  return (
-+    <main>
-+      <h1>React Mini Blog</h1>
-+      <p>
-+        This project practices React fundamentals before moving to the Next.js
-+        blog project.
-+      </p>
-+      <p>
-+        In this step, focus on splitting one screen into smaller components.
-+      </p>
-+    </main>
-+  )
-+}
-+
-+export default HomePage
+`src/App.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+import Footer from './components/Footer'
+import Header from './components/Header'
+import HomePage from './pages/HomePage'
+
+function App() {
+  return (
+    <>
+      <Header />
+      <HomePage />
+      <Footer />
+    </>
+  )
+}
+
+export default App
+~~~
+
+#### `src/components/Footer.jsx`
+
+`src/components/Footer.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+function Footer() {
+  return <footer>React fundamentals before Next.js</footer>
+}
+
+export default Footer
+~~~
+
+#### `src/components/Header.jsx`
+
+`src/components/Header.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+function Header() {
+  return (
+    <header>
+      <strong>React Mini Blog</strong>
+    </header>
+  )
+}
+
+export default Header
+~~~
+
+#### `src/pages/HomePage.jsx`
+
+`src/pages/HomePage.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+function HomePage() {
+  return (
+    <main>
+      <h1>React Mini Blog</h1>
+      <p>
+        This project practices React fundamentals before moving to the Next.js
+        blog project.
+      </p>
+      <p>
+        In this step, focus on splitting one screen into smaller components.
+      </p>
+    </main>
+  )
+}
+
+export default HomePage
 ~~~
 
 ### 설명과 확인
@@ -152,7 +118,6 @@ index 0000000..5f3251c
 ~~~powershell
 npm.cmd run lint
 npm.cmd run build
-npm.cmd run dev
 ~~~
 
 화면 위아래에 Header와 Footer가 보이고, 가운데 HomePage 내용이 `step-1`과 같게 표시되는지 확인합니다.
@@ -161,21 +126,16 @@ npm.cmd run dev
 
 Header와 Footer 중 하나의 문구를 props로 전달하려면 어느 경계를 바꿀지 적습니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.
 
-## 저장소에 기록하기
+## GitHub에 저장하기
 
-실험용 변경을 모두 복구한 뒤 검사 결과와 코드 변경을 함께 확인합니다.
+독립 확인에서 잠시 바꾼 코드를 원래대로 돌린 뒤 현재 파일 상태를 확인합니다. 검사와 화면 확인이 끝났다면 이번 단계의 결과를 하나의 commit으로 저장합니다.
 
 ```powershell
-git branch --show-current
-git status --short
-git diff
-npm.cmd run lint
-npm.cmd run build
+git status
 git add .
-git diff --staged
-git commit -m "Complete React step 2"
-git push origin main
-git status --short --branch
+git commit -m "Step 2: Split the UI into components"
+git push
+git status
 ```
 
-현재 브랜치는 `main`이어야 합니다. 마지막 상태에서 `main...origin/main` 뒤에 `ahead`가 없고 작업 파일 목록도 비어 있어야 합니다.
+마지막 `git status`에서 저장하지 않은 변경 파일이 없어야 합니다. GitHub의 개인 저장소를 열어 `main`에 이번 Step의 commit이 보이는지도 확인합니다.
