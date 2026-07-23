@@ -103,8 +103,8 @@ export default App
 ## 완료 결과 및 실행 확인
 
 ~~~powershell
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 ~~~
 
 lint와 build가 통과해야 합니다. 브라우저에는 `React Mini Blog` 제목과 두 설명 문단이 보여야 하며, Vite 로고와 counter는 더 이상 보이지 않아야 합니다. Vite가 5173이 아닌 다른 포트를 표시하면 터미널의 실제 `Local` 주소를 엽니다.
