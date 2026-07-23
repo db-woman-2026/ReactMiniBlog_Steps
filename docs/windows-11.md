@@ -1,6 +1,6 @@
 # Windows 11 x64 개발 환경 준비
 
-이 강의는 Windows 11 x64와 Windows Terminal의 `Windows PowerShell` 프로필을 기준으로 진행합니다. 프로그램 설치를 마친 뒤 수업에서 개인 Vite 프로젝트와 GitHub 저장소를 직접 만듭니다.
+아래 명령은 Windows 11 x64와 Windows Terminal의 `Windows PowerShell` 프로필에서 실행합니다. 프로그램 설치를 마친 뒤 개인 Vite 프로젝트와 GitHub 저장소를 만듭니다.
 
 ## 1. Windows Terminal 설치
 
@@ -22,7 +22,7 @@ $PSVersionTable.PSEdition
 [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
 ```
 
-Windows 11과 `X64`가 표시되어야 합니다. 강의 명령은 Windows PowerShell 5.1에서 실행할 수 있는 문법만 사용합니다.
+Windows 11과 `X64`가 표시되어야 합니다. 아래 명령은 Windows PowerShell 5.1에서 실행할 수 있는 문법만 사용합니다.
 
 ## 2. 개발 프로그램 설치
 
@@ -45,7 +45,7 @@ code --version
 gh --version
 ```
 
-이 과정은 Node.js `22.13.0` 이상을 사용합니다. 명령을 찾지 못하면 새 Windows Terminal 창인지 확인한 뒤 실행 파일 경로를 확인합니다.
+Node.js `22.13.0` 이상을 사용합니다. 명령을 찾지 못하면 새 Windows Terminal 창인지 확인한 뒤 실행 파일 경로를 확인합니다.
 
 ```powershell
 (Get-Command node).Source
@@ -71,7 +71,7 @@ gh auth status
 
 ## 4. 개인 Vite React 프로젝트 생성
 
-교안 저장소를 clone하지 않습니다. 각 수강생이 같은 버전의 Vite React 프로젝트를 새로 만듭니다.
+이 저장소를 clone하는 대신 지정된 버전의 Vite React 프로젝트를 새로 만듭니다.
 
 ```powershell
 New-Item -ItemType Directory -Path "$HOME\dongbu" -Force | Out-Null
@@ -133,7 +133,7 @@ Set-Location "$HOME\dongbu\react-mini-blog"
 code .
 ```
 
-실습 중에는 Windows Terminal 탭을 두 개 사용합니다.
+Windows Terminal 탭을 두 개 사용합니다.
 
 첫 번째 탭은 개발 서버 전용입니다.
 
@@ -155,7 +155,7 @@ VS Code 오른쪽 아래에서 파일 인코딩이 `UTF-8`인지 확인합니다
 
 ## 8. 매 Step 저장 순서
 
-각 Step은 개인 저장소의 `main`에서 이어서 작업합니다. 교안 저장소의 `step-N` 브랜치로 이동하지 않습니다.
+각 Step은 개인 저장소의 `main`에서 작업합니다. 이 저장소의 `step-N` 브랜치로 이동하지 않습니다.
 
 ```powershell
 git status

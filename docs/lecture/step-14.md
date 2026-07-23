@@ -8,7 +8,7 @@
 
 ## 시작 전 확인
 
-권장 시간은 55분입니다. 개인 저장소의 `main`에 Step 13 결과를 commit하고 GitHub에 push한 상태로 시작합니다.
+개인 저장소의 `main`에 Step 13 결과를 commit하고 GitHub에 push한 상태로 시작합니다.
 
 Windows Terminal의 PowerShell에서 개인 프로젝트 폴더로 이동하고 현재 상태를 확인합니다.
 

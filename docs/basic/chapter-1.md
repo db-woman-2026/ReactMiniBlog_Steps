@@ -130,7 +130,7 @@ index.html
 
 ## 7. 개발 명령의 의미
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. 이 강의의 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
 
 ~~~powershell
 npm.cmd install

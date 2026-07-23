@@ -11,7 +11,7 @@ git status
 
 현재 위치는 `$HOME\dongbu\react-mini-blog`이어야 합니다. 개인 저장소의 `main`에서 직전 Step까지 commit한 상태인지 확인합니다.
 
-예를 들어 Step 7은 Step 6까지 직접 작성한 파일에서 이어집니다. 교안 저장소의 `step-7` 브랜치로 바꾸거나 같은 Step의 내용을 두 번 입력하지 않습니다.
+예를 들어 Step 7은 Step 6까지 직접 작성한 파일에서 이어집니다. 이 저장소의 `step-7` 브랜치로 바꾸거나 같은 Step의 내용을 두 번 입력하지 않습니다.
 
 ## 2. 명령을 찾지 못할 때
 
@@ -42,7 +42,7 @@ git status
 git push
 ```
 
-`gh auth status`에는 본인 계정이 표시되어야 합니다. `git remote -v`의 `origin`은 본인의 `react-mini-blog` 저장소여야 하며 교안 저장소 주소가 나오면 안 됩니다.
+`gh auth status`에는 본인 계정이 표시되어야 합니다. `git remote -v`의 `origin`은 본인의 `react-mini-blog` 저장소여야 하며 이 저장소 주소가 나오면 안 됩니다.
 
 아직 첫 GitHub 저장소를 만들지 않았다면 [Windows 11 환경 준비](./windows-11.md)의 6번 절차를 먼저 마칩니다.
 
