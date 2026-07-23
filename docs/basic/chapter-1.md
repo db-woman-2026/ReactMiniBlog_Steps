@@ -130,17 +130,17 @@ index.html
 
 ## 7. 개발 명령의 의미
 
-> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다. 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다. 터미널 명령은 PowerShell 기준입니다.
 
 ~~~powershell
-npm.cmd install
-npm.cmd run dev
-npm.cmd run build
+npm install
+npm run dev
+npm run build
 ~~~
 
-- `npm.cmd install`: `package.json`에 적힌 패키지를 설치하고 `package-lock.json`을 만듭니다.
-- `npm.cmd run dev`: 개발 서버를 실행합니다. 파일을 저장하면 브라우저가 빠르게 갱신됩니다.
-- `npm.cmd run build`: 배포할 수 있는 결과물을 만들 수 있는지 확인합니다.
+- `npm install`: `package.json`에 적힌 패키지를 설치하고 `package-lock.json`을 만듭니다.
+- `npm run dev`: 개발 서버를 실행합니다. 파일을 저장하면 브라우저가 빠르게 갱신됩니다.
+- `npm run build`: 배포할 수 있는 결과물을 만들 수 있는지 확인합니다.
 
 ## 코드 읽기 연습
 
