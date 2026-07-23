@@ -273,11 +273,11 @@ export default NewPostPage
 
 ## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다.
 
 ~~~powershell
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 ~~~
 
 새 글을 작성하면 해당 상세 주소로 이동하고, 기존 글과 새 글이 Posts 목록에 함께 보이는지 확인합니다.

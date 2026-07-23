@@ -28,8 +28,8 @@ Next.js 프로젝트에서도 사용하는 컴포넌트, props, state, form, Rou
 ```powershell
 Set-Location "$HOME\dongbu\react-mini-blog"
 git status
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 git add .
 git commit -m "Step N: 작업 내용"
 git push
