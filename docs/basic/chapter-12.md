@@ -4,7 +4,7 @@
 
 - 렌더링, 이벤트, Effect의 역할을 구분합니다.
 - `useEffect`의 기본 모양과 의존성 배열을 읽습니다.
-- `localStorage`, JSON, `fetch`가 데이터와 연결되는 흐름을 알아봅니다.
+- `localStorage`, JSON, `fetch`가 데이터와 연결되는 흐름을 설명합니다.
 
 ## 1. 렌더링, 이벤트, Effect
 
@@ -255,7 +255,7 @@ function PostsPage() {
 
 미니 블로그 실습은 `react-router-dom`을 사용하고 Next.js는 파일과 폴더 기반 App Router를 사용합니다. 방식은 다르지만 주소에 맞는 화면을 보여 준다는 목적은 같습니다.
 
-## 실습 강의와 연결하기
+## 실습과 연결하기
 
 | 기초 챕터 | 이어지는 실습 |
 | --- | --- |
@@ -268,7 +268,7 @@ function PostsPage() {
 | Chapter 11 | step 9, 11~13: 추가·삭제·수정·검색 |
 | Chapter 12 | step 14~15: 저장소와 mock fetch |
 
-기초 과정을 마치면 개인 저장소의 `main`에서 `docs/lecture/README.md`부터 실습합니다. 실습 중 문법이 낯설면 해당 기초 챕터의 짧은 예제로 돌아옵니다.
+개인 저장소의 `main`에서 코드를 작성하다 문법이 낯설면 해당 기초 챕터의 짧은 예제를 다시 확인합니다.
 
 ## 코드 읽기 연습
 
