@@ -3,7 +3,7 @@
 ## 배울 내용
 
 - 브라우저, HTML, JavaScript, React의 역할을 구분합니다.
-- Vite 프로젝트의 주요 파일을 알아봅니다.
+- Vite 프로젝트의 주요 파일과 역할을 구분합니다.
 - `main.jsx`에서 `App.jsx`까지 이어지는 흐름을 읽습니다.
 
 ## 먼저 알아둘 용어
@@ -56,7 +56,7 @@ HTML처럼 보이는 부분은 `JSX`입니다. 지금은 "컴포넌트 함수가
 Vite React 프로젝트는 다음과 같은 구조로 시작합니다.
 
 ~~~text
-ReactMiniBlog_Steps/
+react-mini-blog/
 ├── index.html
 ├── package.json
 ├── public/
@@ -72,7 +72,7 @@ ReactMiniBlog_Steps/
 - `src/`: 우리가 작성하는 React 코드를 둡니다.
 - `main.jsx`: React 앱의 시작점입니다.
 - `App.jsx`: 가장 위에서 화면을 조립하는 컴포넌트입니다.
-- `index.css`: 전체 화면에 적용할 최소한의 스타일입니다.
+- `index.css`: Simple.css로 해결되지 않는 최소한의 크기나 색상만 적습니다.
 
 ## 4. `index.html`의 root
 
@@ -130,15 +130,15 @@ index.html
 
 ## 7. 개발 명령의 의미
 
-> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. 이 강의의 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md)를 먼저 확인합니다. 터미널 명령은 PowerShell 기준이며, npm은 실행 정책과 관계없이 동작하는 `npm.cmd`를 사용합니다.
 
 ~~~powershell
-npm.cmd ci
+npm.cmd install
 npm.cmd run dev
 npm.cmd run build
 ~~~
 
-- `npm.cmd ci`: `package-lock.json`에 기록된 버전 그대로 패키지를 설치합니다.
+- `npm.cmd install`: `package.json`에 적힌 패키지를 설치하고 `package-lock.json`을 만듭니다.
 - `npm.cmd run dev`: 개발 서버를 실행합니다. 파일을 저장하면 브라우저가 빠르게 갱신됩니다.
 - `npm.cmd run build`: 배포할 수 있는 결과물을 만들 수 있는지 확인합니다.
 

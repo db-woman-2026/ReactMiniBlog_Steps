@@ -1,50 +1,50 @@
 # 단계별 개요
 
-Windows 11에서는 [Windows 개발 환경 준비](../windows-11.md)를 마친 뒤 시작합니다.
-
-React 미니 블로그의 단계별 개요입니다. 입력 순서와 diff는 `docs/lecture/`에서 확인합니다.
+[Windows 11 개발 환경 준비](../windows-11.md)에서 개인 프로젝트 생성과 GitHub 등록을 마친 뒤 시작합니다. 실제 입력 순서는 [단계별 실습](../lecture/README.md)에서 확인합니다.
 
 ## 전체 흐름
 
 | 단계 | 개요 | 한 줄 요약 |
 | --- | --- | --- |
-| `main` | - | Vite React JavaScript 템플릿으로 생성한 시작 상태입니다. |
-| `step-1` | [overview/step-1.md](./step-1.md) | 기본 예제 화면을 지우고 JSX로 첫 미니 블로그 화면을 만듭니다. |
-| `step-2` | [overview/step-2.md](./step-2.md) | Header, Footer, HomePage 컴포넌트로 화면을 나눕니다. |
-| `step-3` | [overview/step-3.md](./step-3.md) | React Router로 `/`, `/about`, `/posts` 주소와 화면을 연결합니다. |
-| `step-4` | [overview/step-4.md](./step-4.md) | PostCard에 props를 전달해 재사용 컴포넌트의 감각을 익힙니다. |
-| `step-5` | [overview/step-5.md](./step-5.md) | 게시글 배열을 `map`으로 반복 렌더링합니다. |
-| `step-6` | [overview/step-6.md](./step-6.md) | `/posts/:postId` 동적 라우트로 상세 페이지를 만듭니다. |
-| `step-7` | [overview/step-7.md](./step-7.md) | 이벤트와 `useState`로 좋아요 버튼 상태를 다룹니다. |
-| `step-8` | [overview/step-8.md](./step-8.md) | controlled input으로 새 글 작성 form의 입력값을 관리합니다. |
-| `step-9` | [overview/step-9.md](./step-9.md) | form submit으로 state 배열에 새 게시글을 추가합니다. |
-| `step-10` | [overview/step-10.md](./step-10.md) | 빈 입력 검증과 조건부 오류 메시지를 추가합니다. |
-| `step-11` | [overview/step-11.md](./step-11.md) | 상세 화면에서 게시글을 삭제하고 목록으로 이동합니다. |
-| `step-12` | [overview/step-12.md](./step-12.md) | 기존 게시글을 수정하는 edit 화면을 추가합니다. |
-| `step-13` | [overview/step-13.md](./step-13.md) | keyword state로 게시글 목록을 검색합니다. |
-| `step-14` | [overview/step-14.md](./step-14.md) | `localStorage`와 `useEffect`로 새로고침 후에도 데이터를 유지합니다. |
-| `step-15` | [overview/step-15.md](./step-15.md) | `public/posts.json` mock fetch와 Next.js 연결 지점을 정리합니다. |
+| 시작 | - | Vite React JavaScript 프로젝트를 만들고 개인 GitHub 저장소의 `main`에 올립니다. |
+| Step 1 | [첫 JSX 화면](./step-1.md) | 기본 예제 화면을 지우고 Simple.css를 연결한 첫 화면을 만듭니다. |
+| Step 2 | [컴포넌트 분리](./step-2.md) | Header, Footer, HomePage 컴포넌트로 화면을 나눕니다. |
+| Step 3 | [React Router](./step-3.md) | React Router로 `/`, `/about`, `/posts` 주소와 화면을 연결합니다. |
+| Step 4 | [Props](./step-4.md) | PostCard에 props를 전달합니다. |
+| Step 5 | [배열 렌더링](./step-5.md) | 게시글 배열을 `map`으로 반복 렌더링합니다. |
+| Step 6 | [동적 라우트](./step-6.md) | `/posts/:postId` 동적 라우트로 상세 페이지를 만듭니다. |
+| Step 7 | [이벤트와 State](./step-7.md) | 이벤트와 `useState`로 좋아요 버튼 상태를 다룹니다. |
+| Step 8 | [Controlled Input](./step-8.md) | controlled input으로 작성 form의 입력값을 관리합니다. |
+| Step 9 | [게시글 작성](./step-9.md) | form submit으로 state 배열에 새 게시글을 추가합니다. |
+| Step 10 | [입력 검증](./step-10.md) | 빈 입력 검증과 조건부 오류 메시지를 추가합니다. |
+| Step 11 | [게시글 삭제](./step-11.md) | 상세 화면에서 게시글을 삭제하고 목록으로 이동합니다. |
+| Step 12 | [게시글 수정](./step-12.md) | 기존 게시글을 수정하는 edit 화면을 추가합니다. |
+| Step 13 | [게시글 검색](./step-13.md) | keyword state로 게시글 목록을 검색합니다. |
+| Step 14 | [localStorage](./step-14.md) | `localStorage`와 `useEffect`로 데이터를 유지합니다. |
+| Step 15 | [mock fetch](./step-15.md) | 정적 JSON을 불러오고 Next.js 과정과 연결합니다. |
 
 ## 단계 묶음
 
 | 범위 | 학습 초점 |
 | --- | --- |
-| `step-1 ~ step-2` | JSX와 컴포넌트 분리 |
-| `step-3 ~ step-6` | React Router와 목록/상세 화면 |
-| `step-7 ~ step-10` | 이벤트, state, controlled form, 검증 |
-| `step-11 ~ step-13` | state 기반 삭제, 수정, 검색 |
-| `step-14 ~ step-15` | 브라우저 저장소, mock fetch, Next.js 전환 준비 |
+| Step 1~2 | JSX와 컴포넌트 분리 |
+| Step 3~6 | React Router와 목록·상세 화면 |
+| Step 7~10 | 이벤트, state, controlled form과 검증 |
+| Step 11~13 | state 기반 삭제, 수정과 검색 |
+| Step 14~15 | 브라우저 저장소, mock fetch와 Next.js 전환 준비 |
 
-## 실습 방향
+## 게시글 처리 방식
 
-이 프로젝트의 CRUD는 서버나 데이터베이스 없이 React state로 먼저 처리합니다.
+서버가 없는 이 프로젝트에서는 게시글을 React state 배열로 관리합니다. 작성, 삭제와 수정은 각각 배열에 객체를 추가하거나 `filter`, `map`으로 새 배열을 만드는 작업입니다.
 
-이후 `NextJsBlog_Steps`에서는 같은 흐름을 API Route와 MongoDB로 옮겨갑니다.
-
-| ReactMiniBlog_Steps | NextJsBlog_Steps |
+| React 미니 블로그 | Next.js 블로그 |
 | --- | --- |
 | state 배열 | MongoDB collection |
-| `setPosts([...posts, newPost])` | `POST /api/post` |
+| 함수형 updater로 객체 추가 | `POST /api/post` |
 | `filter`로 삭제 | `DELETE /api/post/[id]` |
 | `map`으로 수정 | `PUT /api/post/[id]` |
 | React Router | Next.js App Router |
+
+## 기준 코드 브랜치
+
+이 저장소의 `main`은 Vite 시작 상태입니다. `step-1`부터 `step-15`까지는 각 단계의 누적 결과를 확인하는 스냅샷입니다. 개인 실습에서는 이 브랜치로 이동하지 않고 자신의 저장소 `main`을 사용합니다.
