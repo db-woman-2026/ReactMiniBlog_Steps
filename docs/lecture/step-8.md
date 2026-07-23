@@ -1,6 +1,6 @@
 # Step 8. Controlled Input
 
-## 이번 단계에서 할 일
+## 변경 내용
 
 - 새 글 작성 화면을 추가합니다.
 - 제목과 내용을 controlled input으로 관리합니다.
