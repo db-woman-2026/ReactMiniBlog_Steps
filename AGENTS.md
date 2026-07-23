@@ -49,10 +49,10 @@
 
 - 모든 설치와 실습은 Windows 11 x64, Windows Terminal의 PowerShell을 기준으로 설명합니다.
 - 다른 운영체제나 다른 셸의 설치법과 명령 비교표를 넣지 않습니다.
-- 명령은 `git`, `node`, `npm.cmd`, `npx.cmd`와 PowerShell cmdlet 형식으로 적습니다.
+- 명령은 `git`, `node`, 표준 `npm`, `npx`와 PowerShell cmdlet 형식으로 적습니다.
 - 신규 PC를 기준으로 Windows Terminal, Node.js LTS, Git for Windows, VS Code 설치 명령과 공식 링크를 빠뜨리지 않습니다.
 - 수강생 프로젝트 경로 예시는 `$HOME\dongbu\react-mini-blog`를 사용하고 공백 경로, UTF-8, 줄바꿈, 개발 서버와 방화벽 안내를 확인합니다.
-- `npm.ps1` 실행 정책 오류는 `npm.cmd`와 `npx.cmd`로 우회하고 실행 정책 변경을 필수 절차로 두지 않습니다.
+- 운영체제별 npm 실행 래퍼 이름을 교안의 기본 명령으로 사용하지 않습니다.
 - 새 명령 블록은 `powershell`로 표시하고 `/docs` 전체에서 Windows와 맞지 않는 명령을 다시 검색합니다.
 
 ## 강의 품질 기준
