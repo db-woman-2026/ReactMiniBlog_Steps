@@ -25,9 +25,9 @@ React의 화면 구성과 상태 변경을 작은 블로그로 연습합니다. 
 - `useEffect`와 `localStorage`
 - 정적 JSON 로딩
 
-TypeScript, CSS 설계, backend API, 데이터베이스, 인증과 배포는 이 과정에서 다루지 않습니다.
+TypeScript, CSS 설계, backend API, 데이터베이스, 인증과 배포는 다루지 않습니다.
 
-## 학습 순서
+## 작업 확인
 
 1. [Windows 11 환경 준비](docs/windows-11.md)에 따라 개인 프로젝트를 생성하고 GitHub에 등록합니다.
 2. [기초 읽기 자료](docs/basic/README.md)를 확인합니다.
