@@ -269,11 +269,11 @@ export default PostDetailPage
 
 ## 완료 결과 및 실행 확인
 
-> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다. npm 명령은 `npm.cmd`로 실행합니다.
+> Windows 11에서는 [환경 준비](../windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>를 먼저 확인합니다.
 
 ~~~powershell
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 ~~~
 
 Edit 화면에는 기존 값이 들어 있어야 합니다. 저장 후 같은 id의 상세 화면에서 제목과 내용만 바뀌었는지 확인합니다.
