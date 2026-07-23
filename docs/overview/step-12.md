@@ -17,6 +17,14 @@
 - `map`은 특정 항목만 교체할 때 사용할 수 있습니다.
 - 나중에 Next.js에서는 이 흐름이 `PUT /api/post/[id]`로 이어집니다.
 
+```js
+setPosts((currentPosts) =>
+  currentPosts.map((post) => (post.id === id ? updatedPost : post)),
+)
+```
+
+수정도 최신 state에 의존하므로 함수형 updater를 사용합니다.
+
 ## 확인 방법
 
 상세 화면에서 Edit로 이동해 제목이나 내용을 바꾸고 저장하면 상세 화면에 반영되면 됩니다.
