@@ -8,17 +8,16 @@
 
 ## 시작 전 확인
 
-권장 시간은 60분입니다. 개인 실습 저장소의 `main`에서 직전 단계까지 마친 상태로 시작합니다. 코드 블록은 복사해 붙이지 않고 직접 입력합니다.
+개인 저장소의 `main`에 Step 5 결과를 commit하고 GitHub에 push한 상태로 시작합니다.
 
-Windows Terminal의 PowerShell에서 개인 저장소의 `main`과 변경 상태를 확인합니다.
+Windows Terminal의 PowerShell에서 개인 프로젝트 폴더로 이동하고 현재 상태를 확인합니다.
 
 ~~~powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git branch --show-current
-git status --short
+Set-Location "$HOME\dongbu\react-mini-blog"
+git status
 ~~~
 
-`git branch --show-current`에는 `main`이 표시되고 `git status --short`의 출력은 없어야 합니다. 변경이 남아 있다면 원인을 확인하고 시작 상태를 정리합니다.
+`main`에 있고 아직 저장하지 않은 변경 파일이 없어야 합니다. 각 코드 블록 위의 파일 경로를 확인한 뒤 해당 파일의 전체 내용을 직접 입력합니다.
 
 ## 작업 1. 상세 페이지 라우트 추가하기
 
@@ -29,65 +28,72 @@ git status --short
 - 수정: `src/App.jsx`
 - 새 파일: `src/pages/PostDetailPage.jsx`
 
-### 코드 변경
+### 입력할 코드
 
-아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
+#### `src/App.jsx`
 
-~~~diff
-diff --git a/src/App.jsx b/src/App.jsx
-index da358e1..139a728 100644
---- a/src/App.jsx
-+++ b/src/App.jsx
-@@ -3,6 +3,7 @@ import Footer from './components/Footer'
- import Header from './components/Header'
- import AboutPage from './pages/AboutPage'
- import HomePage from './pages/HomePage'
-+import PostDetailPage from './pages/PostDetailPage'
- import PostsPage from './pages/PostsPage'
- 
- function App() {
-@@ -13,6 +14,7 @@ function App() {
-         <Route path="/" element={<HomePage />} />
-         <Route path="/about" element={<AboutPage />} />
-         <Route path="/posts" element={<PostsPage />} />
-+        <Route path="/posts/:postId" element={<PostDetailPage />} />
-       </Routes>
-       <Footer />
-     </BrowserRouter>
-diff --git a/src/pages/PostDetailPage.jsx b/src/pages/PostDetailPage.jsx
-new file mode 100644
-index 0000000..41946b8
---- /dev/null
-+++ b/src/pages/PostDetailPage.jsx
-@@ -0,0 +1,28 @@
-+import { Link, useParams } from 'react-router-dom'
-+import { posts } from '../data/posts'
-+
-+function PostDetailPage() {
-+  const { postId } = useParams()
-+  const post = posts.find((item) => item.id === postId)
-+
-+  if (!post) {
-+    return (
-+      <main>
-+        <h1>Post not found</h1>
-+        <p>No post matches this address.</p>
-+        <Link to="/posts">Back to posts</Link>
-+      </main>
-+    )
-+  }
-+
-+  return (
-+    <main>
-+      <h1>{post.title}</h1>
-+      <p>Written by {post.author}</p>
-+      <p>{post.content}</p>
-+      <Link to="/posts">Back to posts</Link>
-+    </main>
-+  )
-+}
-+
-+export default PostDetailPage
+`src/App.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import AboutPage from './pages/AboutPage'
+import HomePage from './pages/HomePage'
+import PostDetailPage from './pages/PostDetailPage'
+import PostsPage from './pages/PostsPage'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/posts" element={<PostsPage />} />
+        <Route path="/posts/:postId" element={<PostDetailPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  )
+}
+
+export default App
+~~~
+
+#### `src/pages/PostDetailPage.jsx`
+
+`src/pages/PostDetailPage.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+import { Link, useParams } from 'react-router-dom'
+import { posts } from '../data/posts'
+
+function PostDetailPage() {
+  const { postId } = useParams()
+  const post = posts.find((item) => item.id === postId)
+
+  if (!post) {
+    return (
+      <main>
+        <h1>Post not found</h1>
+        <p>No post matches this address.</p>
+        <Link to="/posts">Back to posts</Link>
+      </main>
+    )
+  }
+
+  return (
+    <main>
+      <h1>{post.title}</h1>
+      <p>Written by {post.author}</p>
+      <p>{post.content}</p>
+      <Link to="/posts">Back to posts</Link>
+    </main>
+  )
+}
+
+export default PostDetailPage
 ~~~
 
 ### 설명과 확인
@@ -105,41 +111,56 @@ index 0000000..41946b8
 - 수정: `src/components/PostCard.jsx`
 - 수정: `src/pages/PostsPage.jsx`
 
-### 코드 변경
+### 입력할 코드
 
-아래 diff에서 `+`로 시작하는 줄은 추가하고, `-`로 시작하는 줄은 제거합니다. 새 파일은 diff에 보이는 전체 내용을 입력합니다.
+#### `src/components/PostCard.jsx`
 
-~~~diff
-diff --git a/src/components/PostCard.jsx b/src/components/PostCard.jsx
-index 40b9e29..34e2bc6 100644
---- a/src/components/PostCard.jsx
-+++ b/src/components/PostCard.jsx
-@@ -1,7 +1,11 @@
--function PostCard({ title, excerpt, author }) {
-+import { Link } from 'react-router-dom'
-+
-+function PostCard({ id, title, excerpt, author }) {
-   return (
-     <article className="post-card">
--      <h2>{title}</h2>
-+      <h2>
-+        <Link to={`/posts/${id}`}>{title}</Link>
-+      </h2>
-       <p>{excerpt}</p>
-       <p>Written by {author}</p>
-     </article>
-diff --git a/src/pages/PostsPage.jsx b/src/pages/PostsPage.jsx
-index c9f7962..aef3c92 100644
---- a/src/pages/PostsPage.jsx
-+++ b/src/pages/PostsPage.jsx
-@@ -8,6 +8,7 @@ function PostsPage() {
-       {posts.map((post) => (
-         <PostCard
-           key={post.id}
-+          id={post.id}
-           title={post.title}
-           excerpt={post.excerpt}
-           author={post.author}
+`src/components/PostCard.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+import { Link } from 'react-router-dom'
+
+function PostCard({ id, title, excerpt, author }) {
+  return (
+    <article className="post-card">
+      <h2>
+        <Link to={`/posts/${id}`}>{title}</Link>
+      </h2>
+      <p>{excerpt}</p>
+      <p>Written by {author}</p>
+    </article>
+  )
+}
+
+export default PostCard
+~~~
+
+#### `src/pages/PostsPage.jsx`
+
+`src/pages/PostsPage.jsx`를 열고 파일 전체를 다음 내용으로 맞춥니다.
+
+~~~jsx
+import PostCard from '../components/PostCard'
+import { posts } from '../data/posts'
+
+function PostsPage() {
+  return (
+    <main>
+      <h1>Posts</h1>
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          id={post.id}
+          title={post.title}
+          excerpt={post.excerpt}
+          author={post.author}
+        />
+      ))}
+    </main>
+  )
+}
+
+export default PostsPage
 ~~~
 
 ### 설명과 확인
@@ -154,7 +175,6 @@ index c9f7962..aef3c92 100644
 ~~~powershell
 npm.cmd run lint
 npm.cmd run build
-npm.cmd run dev
 ~~~
 
 첫 카드 제목을 누르면 `/posts/1` 상세 화면이 열리는지 확인합니다. `/posts/999`에는 Post not found 안내가 보여야 합니다.
@@ -163,21 +183,16 @@ npm.cmd run dev
 
 존재하지 않는 `postId` 주소에서 not-found 안내를 확인합니다. 결과와 확인 방법을 한 문장으로 기록합니다. 실험을 위해 바꾼 값은 다음 단계 전에 복구합니다.
 
-## 저장소에 기록하기
+## GitHub에 저장하기
 
-실험용 변경을 모두 복구한 뒤 검사 결과와 코드 변경을 함께 확인합니다.
+독립 확인에서 잠시 바꾼 코드를 원래대로 돌린 뒤 현재 파일 상태를 확인합니다. 검사와 화면 확인이 끝났다면 이번 단계의 결과를 하나의 commit으로 저장합니다.
 
 ```powershell
-git branch --show-current
-git status --short
-git diff
-npm.cmd run lint
-npm.cmd run build
+git status
 git add .
-git diff --staged
-git commit -m "Complete React step 6"
-git push origin main
-git status --short --branch
+git commit -m "Step 6: Add post detail routes"
+git push
+git status
 ```
 
-현재 브랜치는 `main`이어야 합니다. 마지막 상태에서 `main...origin/main` 뒤에 `ahead`가 없고 작업 파일 목록도 비어 있어야 합니다.
+마지막 `git status`에서 저장하지 않은 변경 파일이 없어야 합니다. GitHub의 개인 저장소를 열어 `main`에 이번 Step의 commit이 보이는지도 확인합니다.
