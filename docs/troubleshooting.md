@@ -11,7 +11,7 @@ git branch --show-current
 git status --short
 ```
 
-`step-7` 문서를 따라 한다면 시작 코드는 `step-6`입니다. `step-7` branch는 변경이 이미 들어간 참고용 완성본입니다.
+Step 7 문서는 Step 6까지 직접 입력한 코드에서 이어집니다. 개인 저장소의 `main`에서 같은 변경을 두 번 입력하지 않았는지 확인합니다.
 
 ## 2. 명령을 찾지 못할 때
 
