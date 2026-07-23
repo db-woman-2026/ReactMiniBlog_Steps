@@ -1,6 +1,6 @@
 # Windows 11 x64 개발 환경 준비
 
-이 강의는 Windows 11 x64와 Windows Terminal의 `Windows PowerShell` 프로필을 기준으로 진행합니다. 수업 PC에 프로그램이 이미 보여도 아래 `winget install` 명령을 모두 실행해 설치 상태와 최신 안정판 여부를 확인합니다.
+이 강의는 Windows 11 x64와 Windows Terminal의 `Windows PowerShell` 프로필을 기준으로 진행합니다. 프로그램 설치를 마친 뒤 수업에서 개인 Vite 프로젝트와 GitHub 저장소를 직접 만듭니다.
 
 ## 1. Windows Terminal 설치
 
@@ -11,7 +11,7 @@ winget --version
 winget install --id Microsoft.WindowsTerminal -e --source winget --accept-source-agreements --accept-package-agreements
 ```
 
-`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 `Windows Terminal`을 엽니다.
+`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 Windows Terminal을 엽니다.
 
 탭 오른쪽의 화살표에서 `Windows PowerShell` 프로필을 선택합니다. 이후 모든 명령은 이 탭에서 실행합니다.
 
@@ -22,9 +22,9 @@ $PSVersionTable.PSEdition
 [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
 ```
 
-대상 PC에서는 Windows 11과 `X64`가 표시되어야 합니다. 강의 명령은 Windows PowerShell 5.1에서 실행할 수 있는 문법만 사용합니다.
+Windows 11과 `X64`가 표시되어야 합니다. 강의 명령은 Windows PowerShell 5.1에서 실행할 수 있는 문법만 사용합니다.
 
-## 2. 개발 프로그램 새로 설치
+## 2. 개발 프로그램 설치
 
 다음 명령을 위에서부터 한 줄씩 실행합니다.
 
@@ -45,9 +45,7 @@ code --version
 gh --version
 ```
 
-이 과정은 Node.js `22.13.0` 이상을 사용합니다. Vite 8은 Node.js 20.19 이상 또는 22.12 이상이 필요하므로 강의 기준 버전이면 요구 조건을 충족합니다.
-
-명령을 찾지 못하면 새 Windows Terminal 창인지 확인한 뒤 실행 파일 경로를 확인합니다.
+이 과정은 Node.js `22.13.0` 이상을 사용합니다. 명령을 찾지 못하면 새 Windows Terminal 창인지 확인한 뒤 실행 파일 경로를 확인합니다.
 
 ```powershell
 (Get-Command node).Source
@@ -58,76 +56,125 @@ gh --version
 
 > !@#windows11 test: [Windows 11 x64 초기화 PC에서 Windows Terminal, Node.js LTS x64, Git for Windows x64, VS Code x64, GitHub CLI x64를 위 winget 명령으로 신규 설치하고 React 전 단계를 다시 검증합니다.]@#
 
-## 3. 개인 실습 저장소 준비
+## 3. Git과 GitHub 계정 연결
+
+이름과 이메일은 본인의 GitHub 계정에 사용하는 값으로 바꿉니다.
 
 ```powershell
-gh auth login --hostname github.com --web
 git config --global user.name "Student Name"
 git config --global user.email "student@example.com"
-New-Item -ItemType Directory -Path "$HOME\dongbu" -Force | Out-Null
-Set-Location "$HOME\dongbu"
-git clone --branch main --single-branch https://github.com/db-woman-2026/ReactMiniBlog_Steps.git
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git remote remove origin
-gh repo create react-mini-blog-practice --private --source . --remote origin --push
-git branch --show-current
-git status --short --branch
+gh auth login --hostname github.com --web
+gh auth status
 ```
 
-현재 branch는 `main`이어야 합니다. 같은 저장소 이름이 이미 있으면 다른 이름으로 빈 GitHub 저장소를 만든 뒤 `origin`으로 연결합니다. OneDrive가 관리하는 폴더는 사용하지 않습니다.
+로그인 명령이 표시하는 일회용 코드를 브라우저에 입력합니다. 마지막 `gh auth status`에서 GitHub 계정에 로그인했다는 결과가 나와야 합니다.
 
-## 4. 프로젝트 최초 실행
+## 4. 개인 Vite React 프로젝트 생성
 
-저장소 루트에서 branch와 변경 상태를 확인하고 잠금 파일에 고정된 패키지를 설치합니다.
+교안 저장소를 clone하지 않습니다. 각 수강생이 같은 버전의 Vite React 프로젝트를 새로 만듭니다.
 
 ```powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git switch main
-git status --short
-npm.cmd ci
+New-Item -ItemType Directory -Path "$HOME\dongbu" -Force | Out-Null
+Set-Location "$HOME\dongbu"
+npm.cmd create vite@9.1.1 react-mini-blog -- --template react
+Set-Location "$HOME\dongbu\react-mini-blog"
+npm.cmd install
+```
+
+프로젝트 폴더 이름은 `react-mini-blog`입니다. OneDrive가 관리하는 폴더는 사용하지 않습니다.
+
+PowerShell에서 `npm.ps1` 실행 정책 오류가 나오면 정책을 바꾸지 말고 `npm.cmd`를 사용합니다. `npx`가 필요한 경우에도 `npx.cmd`를 사용합니다.
+
+## 5. 생성된 프로젝트 확인
+
+먼저 검사와 build를 실행합니다.
+
+```powershell
+Set-Location "$HOME\dongbu\react-mini-blog"
 npm.cmd run lint
 npm.cmd run build
 npm.cmd run dev
 ```
 
-`git status --short`는 실행 전 아무것도 출력하지 않아야 합니다. Vite가 표시한 `Local` 주소를 브라우저에서 엽니다. 기본 주소는 `http://localhost:5173`이며 포트를 이미 사용 중이면 다음 번호가 표시됩니다.
+Vite가 표시한 `Local` 주소를 브라우저에서 엽니다. 기본 주소는 `http://localhost:5173`이며 포트를 이미 사용 중이면 5174처럼 다른 번호가 표시됩니다.
 
-개발 서버는 `Ctrl+C`로 종료합니다. Windows 방화벽 창이 나오면 공용 네트워크는 선택하지 않고 신뢰하는 개인 네트워크에서만 Node.js 접근을 허용합니다.
+Vite의 기본 React 화면이 보이면 프로젝트 생성이 끝난 것입니다. 개발 서버는 `Ctrl+C`로 종료할 수 있습니다.
 
-PowerShell에서 `npm.ps1` 실행 정책 오류가 나오면 정책을 바꾸지 말고 `npm.cmd`를 사용합니다. `npx`가 필요한 경우에도 `npx.cmd`를 사용합니다.
+Windows 방화벽 창이 나오면 공용 네트워크는 선택하지 않습니다. 신뢰하는 개인 네트워크에서만 Node.js 접근을 허용합니다.
 
-## 5. 매 단계 반복
+## 6. 첫 commit과 GitHub 저장소 생성
 
-각 단계는 개인 저장소의 `main`에서 이어서 작업합니다.
+생성된 프로젝트를 Git 저장소로 만들고 첫 상태를 기록합니다.
 
 ```powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git branch --show-current
-git status --short
+Set-Location "$HOME\dongbu\react-mini-blog"
+git init -b main
+git add .
+git commit -m "Create Vite React project"
+gh repo create react-mini-blog --private --source . --remote origin --push
+git status
+git remote -v
+```
+
+`git status`에는 `main`에 있고 저장하지 않은 변경 파일이 없다는 결과가 나와야 합니다. `git remote -v`에는 본인 GitHub 계정의 `react-mini-blog` 주소가 표시되어야 합니다.
+
+같은 이름의 GitHub 저장소가 이미 있으면 `gh repo create`의 저장소 이름을 `react-mini-blog-이름`처럼 바꿉니다. 로컬 프로젝트 폴더 이름은 그대로 사용해도 됩니다.
+
+다음 명령으로 브라우저에서 개인 저장소를 열고 첫 commit을 확인합니다.
+
+```powershell
+gh repo view --web
+```
+
+## 7. VS Code와 개발 서버 사용
+
+```powershell
+Set-Location "$HOME\dongbu\react-mini-blog"
+code .
+```
+
+실습 중에는 Windows Terminal 탭을 두 개 사용합니다.
+
+첫 번째 탭은 개발 서버 전용입니다.
+
+```powershell
+Set-Location "$HOME\dongbu\react-mini-blog"
+npm.cmd run dev
+```
+
+두 번째 탭은 검사와 Git 명령 전용입니다.
+
+```powershell
+Set-Location "$HOME\dongbu\react-mini-blog"
+git status
 npm.cmd run lint
 npm.cmd run build
 ```
 
-실험용 변경을 복구한 뒤 commit하고 `git push origin main`을 실행합니다.
+VS Code 오른쪽 아래에서 파일 인코딩이 `UTF-8`인지 확인합니다. 전체 파일의 줄바꿈을 한꺼번에 바꾸지 않습니다.
 
-## 6. VS Code와 파일 상태
+## 8. 매 Step 저장 순서
+
+각 Step은 개인 저장소의 `main`에서 이어서 작업합니다. 교안 저장소의 `step-N` 브랜치로 이동하지 않습니다.
 
 ```powershell
-Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-code .
-git config --global --get core.autocrlf
-git check-attr text eol -- README.md src\App.jsx
-git diff --check
+git status
+npm.cmd run lint
+npm.cmd run build
+git add .
+git commit -m "Step N: 작업 내용"
+git push
+git status
 ```
 
-VS Code 오른쪽 아래에서 파일 인코딩이 `UTF-8`인지 확인합니다. 저장소의 `.gitattributes`가 JavaScript, JSX, JSON, CSS, Markdown 파일의 줄바꿈을 관리하므로 전체 파일의 줄바꿈을 한꺼번에 바꾸지 않습니다.
+브라우저 확인과 독립 확인을 마친 뒤 commit합니다. 마지막 `git status`에는 저장하지 않은 변경 파일이 없어야 합니다.
 
-## 7. PowerShell 진단 명령
+## 9. PowerShell 진단 명령
 
 ```powershell
 Get-Location
-git branch --show-current
-git status --short
+git status
+git remote -v
 node --version
 npm.cmd --version
 Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue

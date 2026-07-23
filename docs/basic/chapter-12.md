@@ -268,7 +268,7 @@ function PostsPage() {
 | Chapter 11 | step 9, 11~13: 추가·삭제·수정·검색 |
 | Chapter 12 | step 14~15: 저장소와 mock fetch |
 
-기초 과정을 마치면 개인 저장소의 `main`에서 `docs/lecture/README.md`부터 실습합니다. 실습 중 문법이 낯설면 해당 기초 챕터의 짧은 예제로 돌아옵니다.
+기초 과정을 마치면 개인 저장소의 `main`에서 [단계별 실습](../lecture/README.md)을 시작합니다. 실습 중 문법이 낯설면 해당 기초 챕터의 짧은 예제로 돌아옵니다.
 
 ## 코드 읽기 연습
 
