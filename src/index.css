@@ -1,3 +1,7 @@
 textarea {
   height: 140px;
 }
+
+.error-message {
+  color: #b00020;
+}
