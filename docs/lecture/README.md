@@ -1,38 +1,27 @@
-# React 단계별 실습
+# React 미니 블로그 단계별 실습
 
-전체 일정은 [강의 운영안](../course-plan.md), 막혔을 때의 확인 순서는 [문제 해결](../troubleshooting.md)에서 확인합니다.
+[Windows 11 개발 환경 준비](../windows-11.md)를 먼저 끝냅니다. 개인 저장소의 `main`에서 직전 단계까지 완성한 코드를 이어서 수정합니다.
 
-Windows 11 수강생은 먼저 [Windows 개발 환경 준비](../windows-11.md)를 끝냅니다. Windows Terminal의 PowerShell을 사용하고, 프로젝트 경로는 `$HOME\dongbu\ReactMiniBlog_Steps`를 기준으로 합니다.
-
-`step-N` 문서는 `step-(N-1)` 완료 코드에 적용합니다. 현재 `step-N` branch는 해당 변경이 이미 반영된 강사용 참고 완성본입니다.
-
-문서를 따라 파일을 수정할 때는 이전 branch에서 시작합니다. diff와 완성 코드를 비교할 때만 현재 branch를 엽니다.
+코드 변경 블록은 직전 단계에서 바뀌는 줄을 보여줍니다. `+`와 `-` 표시 자체는 입력하지 않고 파일 내용을 직접 타이핑합니다. 자동 생성되는 `package-lock.json`은 설치 명령으로 갱신합니다.
 
 ## 강의 목록
 
-| 단계 | 강의 자료 | 요약 |
+| 단계 | 문서 | 결과 |
 | --- | --- | --- |
-| `step-1` | [step-1.md](./step-1.md) | 기본 예제 화면을 지우고 JSX로 첫 미니 블로그 화면을 만듭니다. |
-| `step-2` | [step-2.md](./step-2.md) | Header, Footer, HomePage 컴포넌트로 화면을 나눕니다. |
-| `step-3` | [step-3.md](./step-3.md) | React Router로 `/`, `/about`, `/posts` 주소와 화면을 연결합니다. |
-| `step-4` | [step-4.md](./step-4.md) | PostCard에 props를 전달해 재사용 컴포넌트의 감각을 익힙니다. |
-| `step-5` | [step-5.md](./step-5.md) | 게시글 배열을 `map`으로 반복 렌더링합니다. |
-| `step-6` | [step-6.md](./step-6.md) | `/posts/:postId` 동적 라우트로 상세 페이지를 만듭니다. |
-| `step-7` | [step-7.md](./step-7.md) | 이벤트와 `useState`로 좋아요 버튼 상태를 다룹니다. |
-| `step-8` | [step-8.md](./step-8.md) | controlled input으로 새 글 작성 form의 입력값을 관리합니다. |
+| 1 | [파일 구조와 첫 JSX](./step-1.md) | 기본 화면 |
+| 2 | [컴포넌트 분리](./step-2.md) | Header, Home, Footer |
+| 3 | [React Router](./step-3.md) | 여러 주소와 메뉴 |
+| 4 | [Props](./step-4.md) | 게시글 카드 |
+| 5 | [배열 렌더링](./step-5.md) | 게시글 목록 |
+| 6 | [동적 라우트](./step-6.md) | 상세 페이지 |
+| 7 | [이벤트와 State](./step-7.md) | 좋아요 버튼 |
+| 8 | [Controlled Input](./step-8.md) | 글쓰기 form |
+| 9 | [State 배열에 추가](./step-9.md) | 새 게시글 |
+| 10 | [검증과 조건부 렌더링](./step-10.md) | 입력 오류 표시 |
+| 11 | [게시글 삭제](./step-11.md) | 삭제 동작 |
+| 12 | [게시글 수정](./step-12.md) | 수정 form |
+| 13 | [게시글 검색](./step-13.md) | keyword 필터 |
+| 14 | [localStorage](./step-14.md) | 새로고침 후 유지 |
+| 15 | [mock fetch와 연결](./step-15.md) | 초기 데이터 로딩 |
 
-## 실습 방식
-
-1. 문서에 적힌 시작 branch로 이동하고 `git status --short`의 출력이 없는지 확인합니다.
-2. 각 작업 단위의 설명을 읽은 뒤, `수정할 파일` 링크로 프로젝트 내부 파일을 엽니다.
-3. `코드 변경` diff에서 `+` 줄은 추가하고 `-` 줄은 제거합니다.
-4. 실행 결과를 먼저 예상하고 브라우저에서 확인합니다.
-5. 독립 확인 뒤 임시 변경을 복구합니다.
-6. 다음 명령을 모두 통과한 뒤 다음 단계로 넘어갑니다.
-
-```powershell
-npm.cmd run lint
-npm.cmd run build
-```
-
-개발 서버는 `npm.cmd run dev`로 실행하고 `Ctrl+C`로 종료합니다. 5173 포트가 사용 중이면 Vite가 표시한 5174 등의 실제 `Local` 주소를 엽니다.
+각 장의 독립 확인을 마친 뒤 실험용 코드를 복구하고 `lint`, `build`, commit, push 순서로 마칩니다.
