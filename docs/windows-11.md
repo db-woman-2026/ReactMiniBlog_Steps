@@ -83,7 +83,7 @@ npm.cmd install
 
 프로젝트 폴더 이름은 `react-mini-blog`입니다. OneDrive가 관리하는 폴더는 사용하지 않습니다.
 
-PowerShell에서 `npm.ps1` 실행 정책 오류가 나오면 정책을 바꾸지 말고 `npm.cmd`를 사용합니다. `npx`가 필요한 경우에도 `npx.cmd`를 사용합니다.
+위 프로젝트 생성 명령과 아래 검사 명령처럼 npm 실행 파일은 `npm.cmd`로 직접 지정합니다.
 
 ## 5. 생성된 프로젝트 확인
 
@@ -180,7 +180,7 @@ npm.cmd --version
 Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
 ```
 
-개발 서버가 열리지 않으면 터미널에 처음 표시된 오류부터 확인합니다. 포트가 사용 중이면 Vite가 출력한 실제 주소를 열고, 자세한 복구 순서는 [문제 해결 문서](./troubleshooting.md)를 따릅니다.
+개발 서버가 열리지 않으면 터미널에 처음 표시된 오류부터 확인합니다. 포트가 사용 중이면 Vite가 출력한 실제 주소를 열고, 자세한 복구 순서는 [문제 해결 문서](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 문제 해결」 · 절 「1. 프로젝트 폴더와 시작 상태 확인」)</span>를 따릅니다.
 
 ## 공식 안내
 
