@@ -13,9 +13,15 @@ form submit으로 새 게시글을 state 배열에 추가합니다.
 
 ## 학습 포인트
 
-- React state는 직접 수정하지 않고 새 배열을 만들어 교체합니다.
+- React state는 직접 수정하지 않고 함수형 updater에서 새 배열을 만들어 교체합니다.
 - 새 글 작성은 배열에 객체를 하나 추가하는 일로 먼저 이해할 수 있습니다.
 - 나중에 Next.js에서는 이 흐름이 `POST /api/post`로 이어집니다.
+
+```js
+setPosts((currentPosts) => [newPost, ...currentPosts])
+```
+
+`currentPosts`는 React가 전달한 최신 state입니다. 바깥 scope의 `posts`를 직접 사용하지 않으므로 연속 갱신에서 이전 변경을 잃지 않습니다.
 
 ## 확인 방법
 

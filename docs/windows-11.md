@@ -58,25 +58,23 @@ gh --version
 
 > !@#windows11 test: [Windows 11 x64 초기화 PC에서 Windows Terminal, Node.js LTS x64, Git for Windows x64, VS Code x64, GitHub CLI x64를 위 winget 명령으로 신규 설치하고 React 전 단계를 다시 검증합니다.]@#
 
-## 3. 강의 저장소 준비
-
-모든 강의 저장소는 현재 사용자 프로필의 `dongbu` 폴더 아래에 둡니다.
+## 3. 개인 실습 저장소 준비
 
 ```powershell
+gh auth login --hostname github.com --web
+git config --global user.name "Student Name"
+git config --global user.email "student@example.com"
 New-Item -ItemType Directory -Path "$HOME\dongbu" -Force | Out-Null
 Set-Location "$HOME\dongbu"
-Get-Location
-```
-
-저장소를 아직 받지 않았다면 clone합니다.
-
-```powershell
-git clone https://github.com/db-woman-2026/ReactMiniBlog_Steps.git
+git clone --branch main --single-branch https://github.com/db-woman-2026/ReactMiniBlog_Steps.git
 Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
-git status
+git remote remove origin
+gh repo create react-mini-blog-practice --private --source . --remote origin --push
+git branch --show-current
+git status --short --branch
 ```
 
-이미 `$HOME\dongbu\ReactMiniBlog_Steps` 폴더를 받았다면 `git clone`은 생략하고 `Set-Location`부터 실행합니다. OneDrive가 관리하는 바탕 화면이나 문서 폴더는 파일 잠금과 동기화 충돌이 생길 수 있으므로 사용하지 않습니다.
+현재 branch는 `main`이어야 합니다. 같은 저장소 이름이 이미 있으면 다른 이름으로 빈 GitHub 저장소를 만든 뒤 `origin`으로 연결합니다. OneDrive가 관리하는 폴더는 사용하지 않습니다.
 
 ## 4. 프로젝트 최초 실행
 
@@ -98,21 +96,19 @@ npm.cmd run dev
 
 PowerShell에서 `npm.ps1` 실행 정책 오류가 나오면 정책을 바꾸지 말고 `npm.cmd`를 사용합니다. `npx`가 필요한 경우에도 `npx.cmd`를 사용합니다.
 
-## 5. 단계별 branch 실행
+## 5. 매 단계 반복
 
-현재 작업을 저장하거나 되돌린 뒤 다음 branch로 이동합니다.
+각 단계는 개인 저장소의 `main`에서 이어서 작업합니다.
 
 ```powershell
 Set-Location "$HOME\dongbu\ReactMiniBlog_Steps"
+git branch --show-current
 git status --short
-git switch step-1
-npm.cmd ci
 npm.cmd run lint
 npm.cmd run build
-npm.cmd run dev
 ```
 
-각 `step-N`은 이전 단계의 누적 결과입니다. 문서의 시작 branch를 확인하고 중간 단계를 건너뛰지 않습니다.
+실험용 변경을 복구한 뒤 commit하고 `git push origin main`을 실행합니다.
 
 ## 6. VS Code와 파일 상태
 
@@ -145,5 +141,6 @@ Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
 - [winget install 명령](https://learn.microsoft.com/windows/package-manager/winget/install)
 - [Node.js 다운로드](https://nodejs.org/en/download)
 - [Git for Windows](https://git-scm.com/install/windows)
+- [GitHub CLI 설치](https://github.com/cli/cli/blob/trunk/docs/install_windows.md)
 - [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows)
 - [Vite 시작 안내](https://vite.dev/guide/)
