@@ -35,4 +35,4 @@ TypeScript, CSS 설계, backend API, 데이터베이스, 인증과 배포는 다
 4. 각 단계에서 브라우저 동작, `lint`와 `build`를 확인합니다.
 5. 결과를 commit하고 개인 저장소의 `main`에 push합니다.
 
-마지막 Step 15에서는 `localStorage`에 저장된 값이 없을 때 정적 JSON을 불러옵니다. 다음 과정에서는 이 흐름을 Next.js API와 MongoDB 데이터로 바꿉니다.
+Step 15에서는 `localStorage`에 저장된 값이 없을 때 정적 JSON을 불러옵니다. 같은 데이터 로딩 구조는 Next.js API와 MongoDB 응답에도 적용할 수 있습니다.
