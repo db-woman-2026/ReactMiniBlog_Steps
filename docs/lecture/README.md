@@ -8,8 +8,8 @@
 
 Windows Terminal 탭을 두 개 엽니다.
 
-- 첫 번째 탭에서는 `npm.cmd run dev`를 실행해 개발 서버를 유지합니다.
-- 두 번째 탭에서는 `git status`, `npm.cmd run lint`, `npm.cmd run build`와 Git 명령을 실행합니다.
+- 첫 번째 탭에서는 `npm run dev`를 실행해 개발 서버를 유지합니다.
+- 두 번째 탭에서는 `git status`, `npm run lint`, `npm run build`와 Git 명령을 실행합니다.
 
 개발 서버를 처음 실행하면 터미널의 `Local` 주소를 브라우저에서 엽니다. 파일을 저장할 때마다 같은 화면에서 결과를 확인합니다.
 
