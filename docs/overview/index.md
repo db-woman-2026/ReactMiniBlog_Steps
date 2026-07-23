@@ -21,11 +21,11 @@
 | Step 12 | [게시글 수정](./step-12.md) | 기존 게시글을 수정하는 edit 화면을 추가합니다. |
 | Step 13 | [게시글 검색](./step-13.md) | keyword state로 게시글 목록을 검색합니다. |
 | Step 14 | [localStorage](./step-14.md) | `localStorage`와 `useEffect`로 데이터를 유지합니다. |
-| Step 15 | [mock fetch](./step-15.md) | 정적 JSON을 불러오고 Next.js 과정과 연결합니다. |
+| Step 15 | [mock fetch](./step-15.md) | 정적 JSON을 불러오고 Next.js API 요청 구조와 비교합니다. |
 
 ## 단계 묶음
 
-| 범위 | 학습 초점 |
+| 범위 | 확인 내용 |
 | --- | --- |
 | Step 1~2 | JSX와 컴포넌트 분리 |
 | Step 3~6 | React Router와 목록·상세 화면 |
