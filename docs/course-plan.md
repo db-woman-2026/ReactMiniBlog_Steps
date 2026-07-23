@@ -7,7 +7,7 @@ Vite 프로젝트에서 JSX, 컴포넌트, 라우팅, 상태, 입력, 저장과 
 - [Windows 11 개발 환경 준비](./windows-11.md)에 따라 Vite React 프로젝트를 만듭니다.
 - Windows Terminal, Node.js, Git, VS Code와 GitHub CLI를 사용할 수 있는지 확인합니다.
 - 개인 `react-mini-blog` 저장소의 `main`에 첫 commit이 push되어 있는지 확인합니다.
-- 필요한 문법은 [React 기초 자료](./basic/README.md)에서 찾아봅니다.
+- 필요한 문법은 [React 기초 자료](./basic/README.md)에서 확인합니다.
 
 ## 단계별 결과
 
