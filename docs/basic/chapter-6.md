@@ -1,6 +1,6 @@
 # Chapter 6. 컴포넌트와 화면 조립
 
-## 배울 내용
+## 확인할 내용
 
 - 컴포넌트를 정의하는 코드와 사용하는 코드를 구분합니다.
 - 큰 화면을 의미 있는 작은 컴포넌트로 나눕니다.
@@ -57,7 +57,7 @@ function MainContent() {
 }
 
 function Footer() {
-  return <footer>React 기초 과정</footer>
+  return <footer>React Mini Blog</footer>
 }
 
 function App() {
@@ -91,7 +91,7 @@ function Paragraph() {
 }
 ~~~
 
-초급 단계에서는 `Header`, `Footer`, `PostCard`, `HomePage`처럼 역할이 분명한 단위부터 나눕니다.
+`Header`, `Footer`, `PostCard`, `HomePage`처럼 역할이 분명한 단위로 나눕니다.
 
 ## 5. 반복되는 화면을 컴포넌트로 만들기
 
@@ -136,7 +136,7 @@ function PostsPage() {
 }
 ~~~
 
-컴포넌트는 같지만 전달하는 데이터가 달라 서로 다른 글이 보입니다. 데이터 전달은 다음 챕터에서 자세히 배웁니다.
+컴포넌트는 같지만 전달하는 데이터가 달라 서로 다른 글이 보입니다. 데이터는 props로 전달합니다.
 
 ## 6. 컴포넌트를 파일로 분리하기
 
