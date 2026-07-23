@@ -4,7 +4,7 @@
 
 - 렌더링, 이벤트, Effect의 역할을 구분합니다.
 - `useEffect`의 기본 모양과 의존성 배열을 읽습니다.
-- `localStorage`, JSON, `fetch`가 데이터와 연결되는 흐름을 알아봅니다.
+- `localStorage`, JSON, `fetch`가 데이터와 연결되는 흐름을 설명합니다.
 
 ## 1. 렌더링, 이벤트, Effect
 
