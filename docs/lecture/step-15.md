@@ -1,6 +1,6 @@
 # Step 15. mock fetch와 Next.js 연결
 
-## 이번 단계에서 할 일
+## 변경 내용
 
 - 정적 JSON 파일에서 초기 게시글을 가져옵니다.
 - 저장된 localStorage 데이터가 없을 때만 mock 데이터를 불러옵니다.
