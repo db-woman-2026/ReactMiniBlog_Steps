@@ -16,6 +16,14 @@
 - `filter`는 삭제 흐름을 설명하기 좋은 배열 메서드입니다.
 - 나중에 Next.js에서는 이 흐름이 `DELETE /api/post/[id]`로 이어집니다.
 
+```js
+setPosts((currentPosts) =>
+  currentPosts.filter((post) => post.id !== id),
+)
+```
+
+삭제도 최신 state에 의존하므로 함수형 updater를 사용합니다.
+
 ## 확인 방법
 
 상세 화면에서 Delete를 누르면 목록으로 이동하고 해당 글이 사라지면 됩니다.
