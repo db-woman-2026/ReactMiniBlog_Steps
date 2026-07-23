@@ -11,7 +11,7 @@ winget --version
 winget install --id Microsoft.WindowsTerminal -e --source winget --accept-source-agreements --accept-package-agreements
 ```
 
-`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 Windows Terminal을 엽니다.
+`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)</span>에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 Windows Terminal을 엽니다.
 
 탭 오른쪽의 화살표에서 `Windows PowerShell` 프로필을 선택합니다. 이후 모든 명령은 이 탭에서 실행합니다.
 
@@ -39,7 +39,7 @@ winget install --id GitHub.cli -e --source winget --architecture x64 --accept-so
 
 ```powershell
 node --version
-npm.cmd --version
+npm --version
 git --version
 code --version
 gh --version
@@ -76,14 +76,12 @@ gh auth status
 ```powershell
 New-Item -ItemType Directory -Path "$HOME\dongbu" -Force | Out-Null
 Set-Location "$HOME\dongbu"
-npm.cmd create vite@9.1.1 react-mini-blog -- --template react
+npm create vite@9.1.1 react-mini-blog -- --template react
 Set-Location "$HOME\dongbu\react-mini-blog"
-npm.cmd install
+npm install
 ```
 
 프로젝트 폴더 이름은 `react-mini-blog`입니다. OneDrive가 관리하는 폴더는 사용하지 않습니다.
-
-위 프로젝트 생성 명령과 아래 검사 명령처럼 npm 실행 파일은 `npm.cmd`로 직접 지정합니다.
 
 ## 5. 생성된 프로젝트 확인
 
@@ -91,9 +89,9 @@ npm.cmd install
 
 ```powershell
 Set-Location "$HOME\dongbu\react-mini-blog"
-npm.cmd run lint
-npm.cmd run build
-npm.cmd run dev
+npm run lint
+npm run build
+npm run dev
 ```
 
 Vite가 표시한 `Local` 주소를 브라우저에서 엽니다. 기본 주소는 `http://localhost:5173`이며 포트를 이미 사용 중이면 5174처럼 다른 번호가 표시됩니다.
@@ -139,7 +137,7 @@ Windows Terminal 탭을 두 개 사용합니다.
 
 ```powershell
 Set-Location "$HOME\dongbu\react-mini-blog"
-npm.cmd run dev
+npm run dev
 ```
 
 두 번째 탭은 검사와 Git 명령 전용입니다.
@@ -147,8 +145,8 @@ npm.cmd run dev
 ```powershell
 Set-Location "$HOME\dongbu\react-mini-blog"
 git status
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 ```
 
 VS Code 오른쪽 아래에서 파일 인코딩이 `UTF-8`인지 확인합니다. 전체 파일의 줄바꿈을 한꺼번에 바꾸지 않습니다.
@@ -159,8 +157,8 @@ VS Code 오른쪽 아래에서 파일 인코딩이 `UTF-8`인지 확인합니다
 
 ```powershell
 git status
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 git add .
 git commit -m "Step N: 작업 내용"
 git push
@@ -176,7 +174,7 @@ Get-Location
 git status
 git remote -v
 node --version
-npm.cmd --version
+npm --version
 Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
 ```
 
@@ -184,10 +182,10 @@ Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
 
 ## 공식 안내
 
-- [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install)
-- [winget install 명령](https://learn.microsoft.com/windows/package-manager/winget/install)
-- [Node.js 다운로드](https://nodejs.org/en/download)
-- [Git for Windows](https://git-scm.com/install/windows)
-- [GitHub CLI 설치](https://github.com/cli/cli/blob/trunk/docs/install_windows.md)
-- [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows)
-- [Vite 시작 안내](https://vite.dev/guide/)
+- [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/terminal/install)</span>
+- [winget install 명령](https://learn.microsoft.com/windows/package-manager/winget/install) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/package-manager/winget/install)</span>
+- [Node.js 다운로드](https://nodejs.org/en/download) <span class="print-url" data-print-url="true">(웹 주소: https://nodejs.org/en/download)</span>
+- [Git for Windows](https://git-scm.com/install/windows) <span class="print-url" data-print-url="true">(웹 주소: https://git-scm.com/install/windows)</span>
+- [GitHub CLI 설치](https://github.com/cli/cli/blob/trunk/docs/install_windows.md) <span class="print-url" data-print-url="true">(웹 주소: https://github.com/cli/cli/blob/trunk/docs/install_windows.md)</span>
+- [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows) <span class="print-url" data-print-url="true">(웹 주소: https://code.visualstudio.com/docs/setup/windows)</span>
+- [Vite 시작 안내](https://vite.dev/guide/) <span class="print-url" data-print-url="true">(웹 주소: https://vite.dev/guide/)</span>
