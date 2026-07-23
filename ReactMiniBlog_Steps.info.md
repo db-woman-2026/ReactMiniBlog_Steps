@@ -1,94 +1,38 @@
-# ReactMiniBlog_Steps Capsule
+# React 미니 블로그 학습 범위
 
-## Project Purpose
+Next.js 과정 전에 React의 화면 구성과 상태 변경을 작은 블로그로 연습합니다. 개인 저장소의 `main`에서 Step 1부터 Step 15까지 이어서 작업합니다.
 
-`ReactMiniBlog_Steps` is a beginner-friendly educational React project. It is designed as a prerequisite curriculum before `NextJsBlog_Steps`, especially for non-developers and first-time React learners.
+## 사용하는 도구
 
-The project teaches React basics through a small local mini blog. It does not teach backend, database, authentication, deployment, or production architecture.
+- Vite와 React
+- React Router
+- JavaScript
+- CSS
+- localStorage
+- 정적 JSON과 fetch
 
-## Tooling Direction
+## 다루는 내용
 
-- Use Vite with the React JavaScript template.
-- Use React Router only to teach the basic relationship between URL and screen.
-- Keep CSS minimal. Do not introduce a CSS framework or a dedicated CSS learning step.
-- Use React state first, then `localStorage`, to explain why later projects need APIs and databases.
-
-## Branch Structure
-
-- `main`: initial Vite React starter plus project documentation.
-- `step-1` to `step-15`: cumulative beginner React mini blog lessons.
-
-Branches are cumulative. `step-2` is based on `step-1`, `step-3` is based on `step-2`, and so on.
-
-The branch chain should preserve this invariant:
-
-```powershell
-git merge-base --is-ancestor step-N step-(N+1)
-```
-
-## Documentation Layout
-
-- `README.md`: student-facing project introduction.
-- `ReactMiniBlog_Steps.info.md`: project maintenance and curriculum capsule.
-- `docs/overview/`: short step overview files.
-
-Detailed `docs/lecture/` materials are intentionally deferred.
-
-## Curriculum Scope
-
-Included:
-
-- Vite React file structure
-- JSX
-- component extraction
+- JSX와 컴포넌트
 - props
-- arrays and `map`
-- React Router basics
-- dynamic route params
-- event handling
-- `useState`
-- controlled inputs
-- create, update, delete operations using state
-- conditional rendering and validation messages
-- search/filtering
-- `useEffect`
-- `localStorage`
-- simple static JSON fetch
-- connection map to `NextJsBlog_Steps`
+- 배열과 `map`
+- 동적 주소
+- event와 `useState`
+- controlled input
+- 게시글 생성·조회·수정·삭제
+- 입력 검증과 조건부 렌더링
+- 검색
+- `useEffect`와 localStorage
+- 정적 JSON 로딩
 
-Excluded:
+TypeScript, CSS framework, backend API, 데이터베이스, 인증, 배포는 이 과정에서 다루지 않습니다.
 
-- TypeScript
-- CSS frameworks
-- React Router advanced loaders/actions
-- Context
-- Reducer
-- backend APIs
-- database
-- authentication
-- deployment
-- testing
+## 학습 순서
 
-## Overview Steps
+1. [Windows 11 환경 준비](docs/windows-11.md)를 끝냅니다.
+2. [기초 읽기 자료](docs/basic/README.md)를 확인합니다.
+3. [단계별 실습](docs/lecture/README.md)의 코드를 직접 입력합니다.
+4. 각 단계에서 `lint`와 `build`를 통과시킵니다.
+5. 변경을 commit하고 개인 저장소의 `origin/main`에 push합니다.
 
-- `step-1`: file structure and first JSX screen
-- `step-2`: component extraction
-- `step-3`: React Router basics
-- `step-4`: props
-- `step-5`: arrays and list rendering
-- `step-6`: dynamic route detail page
-- `step-7`: events and state
-- `step-8`: controlled form inputs
-- `step-9`: create a post with state
-- `step-10`: validation and conditional rendering
-- `step-11`: delete a post
-- `step-12`: update a post
-- `step-13`: search posts
-- `step-14`: persist posts with `localStorage`
-- `step-15`: load starter data from a static JSON file and compare with Next.js
-
-## Operational Notes
-
-- Keep each step small enough for beginner students to type by hand.
-- If an earlier step changes, update that branch first and propagate forward by merging upward through the step chain.
-- `docs/overview` should remain short. Detailed copy-paste-friendly lecture material belongs in a future `docs/lecture` pass.
+마지막 Step 15에서는 localStorage에 저장된 값이 없을 때 정적 JSON을 불러옵니다. 다음 과정에서는 이 흐름을 Next.js API와 MongoDB 데이터로 바꿉니다.
