@@ -1,6 +1,6 @@
 # Chapter 1. React와 프로젝트 구조
 
-## 배울 내용
+## 확인할 내용
 
 - 브라우저, HTML, JavaScript, React의 역할을 구분합니다.
 - Vite 프로젝트의 주요 파일과 역할을 구분합니다.
