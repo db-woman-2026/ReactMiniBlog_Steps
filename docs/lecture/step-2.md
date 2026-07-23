@@ -1,6 +1,6 @@
 # Step 2. 컴포넌트 분리
 
-## 이번 단계에서 할 일
+## 변경 내용
 
 - 화면을 Header, Footer, HomePage 컴포넌트로 나눕니다.
 - 파일을 나누고 import/export로 연결합니다.

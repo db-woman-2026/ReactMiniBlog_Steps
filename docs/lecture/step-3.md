@@ -1,6 +1,6 @@
 # Step 3. React Router 기초
 
-## 이번 단계에서 할 일
+## 변경 내용
 
 - React Router를 설치하고 URL과 화면을 연결합니다.
 - `/`, `/about`, `/posts` 주소를 만듭니다.
