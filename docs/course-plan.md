@@ -4,10 +4,10 @@ Vite 프로젝트에서 JSX, 컴포넌트, 라우팅, 상태, 입력, 저장과 
 
 ## 시작 조건
 
-- [Windows 11 개발 환경 준비](./windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>에 따라 Vite React 프로젝트를 만듭니다.
+- [Windows 11 개발 환경 준비](./windows-11.md) <span class="print-reference" data-print-reference="true">(React · Windows 11 x64 개발 환경 준비 · 1. Windows Terminal 설치)</span>에 따라 Vite React 프로젝트를 만듭니다.
 - Windows Terminal, Node.js, Git, VS Code와 GitHub CLI를 사용할 수 있는지 확인합니다.
 - 개인 `react-mini-blog` 저장소의 `main`에 첫 commit이 push되어 있는지 확인합니다.
-- 필요한 문법은 [React 기초 자료](./basic/README.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 기초」 · 절 「문서 목록」)</span>에서 확인합니다.
+- 필요한 문법은 [React 기초 자료](./basic/README.md) <span class="print-reference" data-print-reference="true">(React · React 기초 · 문서 목록)</span>에서 확인합니다.
 
 ## 단계별 결과
 
@@ -47,4 +47,4 @@ Vite 프로젝트에서 JSX, 컴포넌트, 라우팅, 상태, 입력, 저장과 
 - 마지막 코드에서 `npm run lint`와 `npm run build`가 통과합니다.
 - 개인 저장소의 `main`과 원격 `main`이 같은 commit을 가리킵니다.
 
-막힌 경우 파일을 임의로 지우거나 다른 Step의 코드를 가져오기 전에 [문제 해결](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 문제 해결」 · 절 「1. 프로젝트 폴더와 시작 상태 확인」)</span>에서 증상에 맞는 진단 절차를 확인합니다.
+막힌 경우 파일을 임의로 지우거나 다른 Step의 코드를 가져오기 전에 [문제 해결](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(React · React 미니 블로그 문제 해결 · 1. 프로젝트 폴더와 시작 상태 확인)</span>에서 증상에 맞는 진단 절차를 확인합니다.

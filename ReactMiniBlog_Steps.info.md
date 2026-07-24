@@ -29,9 +29,9 @@ TypeScript, CSS 설계, backend API, 데이터베이스, 인증과 배포는 다
 
 ## 작업 확인
 
-1. [Windows 11 환경 준비](docs/windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>에 따라 개인 프로젝트를 생성하고 GitHub에 등록합니다.
-2. [기초 읽기 자료](docs/basic/README.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 기초」 · 절 「문서 목록」)</span>를 확인합니다.
-3. [단계별 실습](docs/lecture/README.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 단계별 실습」 · 절 「터미널 사용」)</span>의 파일별 전체 코드를 직접 입력합니다.
+1. [Windows 11 환경 준비](docs/windows-11.md) <span class="print-reference" data-print-reference="true">(React · Windows 11 x64 개발 환경 준비 · 1. Windows Terminal 설치)</span>에 따라 개인 프로젝트를 생성하고 GitHub에 등록합니다.
+2. [기초 읽기 자료](docs/basic/README.md) <span class="print-reference" data-print-reference="true">(React · React 기초 · 문서 목록)</span>를 확인합니다.
+3. [단계별 실습](docs/lecture/README.md) <span class="print-reference" data-print-reference="true">(React · React 미니 블로그 단계별 실습 · 터미널 사용)</span>의 파일별 전체 코드를 직접 입력합니다.
 4. 각 단계에서 브라우저 동작, `lint`와 `build`를 확인합니다.
 5. 결과를 commit하고 개인 저장소의 `main`에 push합니다.
 

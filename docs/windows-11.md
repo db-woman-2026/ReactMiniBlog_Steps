@@ -11,7 +11,7 @@ winget --version
 winget install --id Microsoft.WindowsTerminal -e --source winget --accept-source-agreements --accept-package-agreements
 ```
 
-`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)</span>에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 Windows Terminal을 엽니다.
+`winget`을 찾지 못하면 [App Installer 공식 안내](https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer) <span class="print-url" data-print-url="true">(https://learn.microsoft.com/windows/msix/app-installer/install-update-app-installer)</span>에 따라 App Installer를 설치하거나 업데이트합니다. 설치 후 처음 열었던 창을 닫고 시작 메뉴에서 Windows Terminal을 엽니다.
 
 탭 오른쪽의 화살표에서 `Windows PowerShell` 프로필을 선택합니다. 이후 모든 명령은 이 탭에서 실행합니다.
 
@@ -178,14 +178,14 @@ npm --version
 Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
 ```
 
-개발 서버가 열리지 않으면 터미널에 처음 표시된 오류부터 확인합니다. 포트가 사용 중이면 Vite가 출력한 실제 주소를 열고, 자세한 복구 순서는 [문제 해결 문서](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 문제 해결」 · 절 「1. 프로젝트 폴더와 시작 상태 확인」)</span>를 따릅니다.
+개발 서버가 열리지 않으면 터미널에 처음 표시된 오류부터 확인합니다. 포트가 사용 중이면 Vite가 출력한 실제 주소를 열고, 자세한 복구 순서는 [문제 해결 문서](./troubleshooting.md) <span class="print-reference" data-print-reference="true">(React · React 미니 블로그 문제 해결 · 1. 프로젝트 폴더와 시작 상태 확인)</span>를 따릅니다.
 
 ## 공식 안내
 
-- [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/terminal/install)</span>
-- [winget install 명령](https://learn.microsoft.com/windows/package-manager/winget/install) <span class="print-url" data-print-url="true">(웹 주소: https://learn.microsoft.com/windows/package-manager/winget/install)</span>
-- [Node.js 다운로드](https://nodejs.org/en/download) <span class="print-url" data-print-url="true">(웹 주소: https://nodejs.org/en/download)</span>
-- [Git for Windows](https://git-scm.com/install/windows) <span class="print-url" data-print-url="true">(웹 주소: https://git-scm.com/install/windows)</span>
-- [GitHub CLI 설치](https://github.com/cli/cli/blob/trunk/docs/install_windows.md) <span class="print-url" data-print-url="true">(웹 주소: https://github.com/cli/cli/blob/trunk/docs/install_windows.md)</span>
-- [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows) <span class="print-url" data-print-url="true">(웹 주소: https://code.visualstudio.com/docs/setup/windows)</span>
-- [Vite 시작 안내](https://vite.dev/guide/) <span class="print-url" data-print-url="true">(웹 주소: https://vite.dev/guide/)</span>
+- [Windows Terminal 설치](https://learn.microsoft.com/windows/terminal/install) <span class="print-url" data-print-url="true">(https://learn.microsoft.com/windows/terminal/install)</span>
+- [winget install 명령](https://learn.microsoft.com/windows/package-manager/winget/install) <span class="print-url" data-print-url="true">(https://learn.microsoft.com/windows/package-manager/winget/install)</span>
+- [Node.js 다운로드](https://nodejs.org/en/download) <span class="print-url" data-print-url="true">(https://nodejs.org/en/download)</span>
+- [Git for Windows](https://git-scm.com/install/windows) <span class="print-url" data-print-url="true">(https://git-scm.com/install/windows)</span>
+- [GitHub CLI 설치](https://github.com/cli/cli/blob/trunk/docs/install_windows.md) <span class="print-url" data-print-url="true">(https://github.com/cli/cli/blob/trunk/docs/install_windows.md)</span>
+- [VS Code Windows 설치](https://code.visualstudio.com/docs/setup/windows) <span class="print-url" data-print-url="true">(https://code.visualstudio.com/docs/setup/windows)</span>
+- [Vite 시작 안내](https://vite.dev/guide/) <span class="print-url" data-print-url="true">(https://vite.dev/guide/)</span>

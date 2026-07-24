@@ -44,7 +44,7 @@ git push
 
 `gh auth status`에는 본인 계정이 표시되어야 합니다. `git remote -v`의 `origin`은 본인의 `react-mini-blog` 저장소여야 하며 이 저장소 주소가 나오면 안 됩니다.
 
-아직 첫 GitHub 저장소를 만들지 않았다면 [Windows 11 환경 준비](./windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>의 6번 절차를 먼저 마칩니다.
+아직 첫 GitHub 저장소를 만들지 않았다면 [Windows 11 환경 준비](./windows-11.md) <span class="print-reference" data-print-reference="true">(React · Windows 11 x64 개발 환경 준비 · 1. Windows Terminal 설치)</span>의 6번 절차를 먼저 마칩니다.
 
 ## 4. 포트나 개발 서버가 꼬였을 때
 

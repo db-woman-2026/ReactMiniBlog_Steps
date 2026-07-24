@@ -6,10 +6,10 @@ Next.js 프로젝트에서도 사용하는 컴포넌트, props, state, form, Rou
 
 ## 시작 순서
 
-1. [Windows 11 환경 준비](docs/windows-11.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「Windows 11 x64 개발 환경 준비」 · 절 「1. Windows Terminal 설치」)</span>에 따라 `react-mini-blog` 프로젝트를 만들고 GitHub에 첫 commit을 올립니다.
-2. [React 기초 읽기 자료](docs/basic/README.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 기초」 · 절 「문서 목록」)</span>에서 실습에 필요한 문법을 확인합니다.
-3. [실습 구성](docs/course-plan.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 실습 구성」 · 절 「시작 조건」)</span>에서 단계별 결과를 확인합니다.
-4. [단계별 개요](docs/overview/index.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「단계별 개요」 · 절 「전체 흐름」)</span>와 [단계별 실습](docs/lecture/README.md) <span class="print-reference" data-print-reference="true">(인쇄본 위치: React · 장 「React 미니 블로그 단계별 실습」 · 절 「터미널 사용」)</span>에서 수정할 내용을 확인합니다.
+1. [Windows 11 환경 준비](docs/windows-11.md) <span class="print-reference" data-print-reference="true">(React · Windows 11 x64 개발 환경 준비 · 1. Windows Terminal 설치)</span>에 따라 `react-mini-blog` 프로젝트를 만들고 GitHub에 첫 commit을 올립니다.
+2. [React 기초 읽기 자료](docs/basic/README.md) <span class="print-reference" data-print-reference="true">(React · React 기초 · 문서 목록)</span>에서 실습에 필요한 문법을 확인합니다.
+3. [실습 구성](docs/course-plan.md) <span class="print-reference" data-print-reference="true">(React · React 미니 블로그 실습 구성 · 시작 조건)</span>에서 단계별 결과를 확인합니다.
+4. [단계별 개요](docs/overview/index.md) <span class="print-reference" data-print-reference="true">(React · 단계별 개요 · 전체 흐름)</span>와 [단계별 실습](docs/lecture/README.md) <span class="print-reference" data-print-reference="true">(React · React 미니 블로그 단계별 실습 · 터미널 사용)</span>에서 수정할 내용을 확인합니다.
 
 ## 실습 범위
 
